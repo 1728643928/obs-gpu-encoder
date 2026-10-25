@@ -27,3 +27,13 @@ If the owner becomes unavailable, the license permits an independent continuatio
 초기 원본 저장소 소유자는 1728643928이며 병합, 게시 및 계정 권한을 관리합니다. 라이선스 권리는 소유자의 지속적인 활동에 의존하지 않습니다. 누구나 자체 Fork에서 브랜치 생성, PR, 빌드, Releases 게시 및 GPL-2.0-or-later에 따른 후속 유지보수를 할 수 있습니다. 원 개발자의 개인 토큰이나 비공개 서비스는 필요하지 않습니다.
 
 원본 유지보수 권한은 소유자가 명시적으로 부여합니다. 불특정 기여자에게 자동으로 쓰기 권한을 주지 마세요. 인수에는 공개 소스, 테스트, 릴리스 문서를 사용하며 계정 인증 정보를 전달하지 않습니다. 소유자가 없어도 Fork에서 계속 개발할 수 있으며 출처, 새 유지보수자와 배포 채널을 명시하세요. Fork는 원본 관리 권한을 부여하지 않습니다.
+
+## Practical handover entry points
+
+The [repository map](README.md#repository-map) and directory READMEs identify implementation and maintenance responsibilities. Use the [source guide](src/README.md) for encoding/IPC, [installer guide](installer/README.md) for OBS discovery and file placement, and [script guide](scripts/README.md) for builds and Releases.
+
+中文：接手时从仓库目录索引进入对应模块，按职责核对代码、安装路径和发版脚本。
+
+日本語：引き継ぎ時はリポジトリ索引から対象モジュールを選び、実装、配置先、公開手順を確認してください。
+
+한국어: 인수 시 저장소 색인에서 해당 모듈을 선택하고 구현, 설치 경로와 릴리스 절차를 확인하세요.

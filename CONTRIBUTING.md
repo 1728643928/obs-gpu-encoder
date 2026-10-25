@@ -25,3 +25,15 @@ Fork して機能ブランチを作成し、変更を絞って PR を送って�
 ## 한국어
 
 Fork 후 기능 브랜치를 만들고 범위를 명확히 한 변경을 PR로 제출하세요. CLA나 비용은 필요하지 않으며 기존 고지를 유지한 GPL-2.0-or-later로 기여합니다. 명시적 GPU 지정, 기능 검사, IPC 제한 및 작업 프로세스 정리를 유지하고 자동 대체 동작을 추가하지 마세요. 네 언어와 관련 테스트를 갱신하고 인코딩 변경에는 실제 GPU 및 OBS 검증을 포함하세요. 방송 키, 개인 설정, 로그, 녹화, 드라이버, 빌드 캐시는 커밋하지 마세요. 릴리스 전 version.json과 네 언어 릴리스 노트를 갱신하세요. 문제 보고에는 환경과 재현 절차를 적고 개인 정보를 제거하세요.
+
+## Module navigation and commit messages
+
+Before editing an unfamiliar area, read its directory README: [native source](src/README.md), [installer](installer/README.md), [scripts](scripts/README.md), [tests](tests/README.md), [resources](data/README.md), [documentation](docs/README.md) or [automation](.github/README.md).
+
+Use a commit title that states the affected module and the actual change. For example, **fix(installer): preserve the explicit OBS destination** or **docs(src): explain worker IPC ownership**. Keep related changes together; shared messages across paths are expected when one commit changes those paths. Do not change untouched code or rewrite published history solely to alter the file-list label.
+
+中文：先读对应目录说明；提交标题写清模块和实际改动，相关文件可以共用同一提交说明。保留已发布历史，不为列表显示修改无关代码。
+
+日本語：対象の README を読み、コミットにはモジュールと実際の変更を記載してください。関連ファイルは同一コミットで構いません。表示だけを目的に無関係な実装や公開履歴を変更しないでください。
+
+한국어: 해당 README를 먼저 읽고 커밋 제목에 모듈과 실제 변경을 적으세요. 관련 파일은 같은 커밋에 포함할 수 있습니다. 표시만 바꾸기 위해 무관한 구현이나 공개 이력을 수정하지 마세요.
