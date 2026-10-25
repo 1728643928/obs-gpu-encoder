@@ -39,6 +39,23 @@ Windows GPU 설정, 모니터 케이블, OBS 렌더링 GPU를 바꾸지 않아�
 
 RX 9060 XT 렌더링과 9700X 내장 GPU H.264 인코딩 환경에서 확인했습니다. 이전 OBS 로컬 RTMP 테스트에서 약 47초의 영상과 오디오를 수신·디코딩했습니다. 0.2.0에서도 300프레임 테스트를 통과했습니다. HEVC/AV1은 기능 확인만 수행했습니다. 공개 방송 플랫폼 수신, 게임 성능, 다른 GPU와 OBS 버전은 검증하지 않았습니다. 미리 보기 버전입니다.
 
+## 디렉터리와 파일의 역할
+
+GitHub 파일 목록 가운데 열은 **마지막 커밋 메시지**입니다. 한 커밋에서 여러 경로를 변경하면 같은 메시지가 표시됩니다. 디렉터리별 README에 자세한 역할이 있습니다.
+
+| 디렉터리 | 내용 |
+| --- | --- |
+| [.github/](../.github/README.md) | CI, 검증, 게시와 버그 템플릿. |
+| [data/](../data/README.md) | OBS 플러그인의 네 언어 리소스. |
+| [docs/](README.md) | 시작, 구조, 검증과 인수 가이드. |
+| [installer/](../installer/README.md) | EXE, OBS 검색, 경로 검사와 번역. |
+| [scripts/](../scripts/README.md) | 빌드, 번역 검사, 설치 테스트, 패키징과 게시. |
+| [src/](../src/README.md) | OBS 연결, AMD 백엔드, GPU 정책과 IPC. |
+| [tests/](../tests/README.md) | CPU 회귀, 실제 GPU 테스트와 파일 잠금 도구. |
+| [third-party/](../third-party/README.md) | 런타임, 도구체인과 설치 프로그램의 제삼자 고지. |
+
+루트의 [CHANGELOG.md](../CHANGELOG.md)는 변경 이력, [CONTRIBUTING.md](../CONTRIBUTING.md)는 기여 절차, [GOVERNANCE.md](../GOVERNANCE.md)는 권한 및 후속 유지보수, [LICENSE](../LICENSE)는 라이선스, [THIRD-PARTY.md](../THIRD-PARTY.md)는 의존성, [version.json](../version.json)은 빌드 버전을 담습니다. [.gitattributes](../.gitattributes)는 줄바꿈, [.gitignore](../.gitignore)는 생성물 제외를 관리합니다.
+
 ## 빌드 및 인수
 
 Windows x64, Node.js 22+, Git이 필요합니다.

@@ -39,6 +39,23 @@ Windows の GPU 設定やモニター接続、OBS の描画 GPU を変える必�
 
 RX 9060 XT で描画し、9700X 内蔵 GPU で H.264 をエンコードする環境で検証しました。以前の OBS ローカル RTMP テストでは約 47 秒の音声・映像を受信してデコードしました。0.2.0 でも 300 フレームのテストが成功しました。HEVC/AV1 は能力確認のみです。公開配信先、ゲーム性能、他の GPU や OBS バージョンは未検証です。本版はプレビューです。
 
+## ディレクトリとファイルの役割
+
+GitHub のファイル一覧の中央列は**最後のコミットメッセージ**です。1 回のコミットで複数パスを変更すると、同じメッセージが表示されます。各ディレクトリの README に詳細があります。
+
+| ディレクトリ | 内容 |
+| --- | --- |
+| [.github/](../.github/README.md) | CI、検証、公開と不具合テンプレート。 |
+| [data/](../data/README.md) | OBS プラグインの 4 言語リソース。 |
+| [docs/](README.md) | 導入、構成、検証と引き継ぎガイド。 |
+| [installer/](../installer/README.md) | EXE、OBS 検索、配置先検証と翻訳。 |
+| [scripts/](../scripts/README.md) | ビルド、翻訳検証、配置テスト、パッケージと公開。 |
+| [src/](../src/README.md) | OBS 接続、AMD バックエンド、GPU 方針と IPC。 |
+| [tests/](../tests/README.md) | CPU 回帰、GPU 実機テストとファイルロック補助。 |
+| [third-party/](../third-party/README.md) | ランタイム、ツール、インストーラーの第三者表示。 |
+
+ルートの [CHANGELOG.md](../CHANGELOG.md) は変更履歴、[CONTRIBUTING.md](../CONTRIBUTING.md) は貢献手順、[GOVERNANCE.md](../GOVERNANCE.md) は権限と継続、[LICENSE](../LICENSE) はライセンス、[THIRD-PARTY.md](../THIRD-PARTY.md) は依存関係、[version.json](../version.json) はビルド用バージョンです。[.gitattributes](../.gitattributes) は改行、[.gitignore](../.gitignore) は生成物の除外を管理します。
+
 ## ビルドと引き継ぎ
 
 Windows x64、Node.js 22+、Git が必要です。

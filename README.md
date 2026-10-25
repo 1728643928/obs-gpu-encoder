@@ -48,6 +48,33 @@ The GPU number is the current DXGI index, not a permanent physical slot. Selecti
 
 See [architecture](docs/architecture.md), [testing](docs/testing.md), [validation record](docs/validation.md) and [installer design](docs/installer.md).
 
+## Repository map
+
+GitHub's file list shows the **last commit message**, rather than a custom description for each path. Several paths can share a message when one commit changed them together. Use this map and each directory's README to understand their roles.
+
+| Directory | Contents and starting point |
+| --- | --- |
+| [.github/](.github/README.md) | CI workflow and bug-report template; build/test/release rules. |
+| [data/](data/README.md) | English, Chinese, Japanese and Korean OBS locale resources. |
+| [docs/](docs/README.md) | User guides, architecture, testing, validation and release handover. |
+| [installer/](installer/README.md) | EXE wizard, OBS scan/validation, installation paths and four-language messages. |
+| [scripts/](scripts/README.md) | Plugin/installer builds, locale checks, installation tests, packaging and publishing. |
+| [src/](src/README.md) | Native OBS plugin, AMD backend, adapter filtering and worker/IPC implementation. |
+| [tests/](tests/README.md) | CPU regressions, real-GPU smoke harnesses and the installer file-lock helper. |
+| [third-party/](third-party/README.md) | Upstream runtime/toolchain/installer notice texts. |
+
+| Root file | Purpose |
+| --- | --- |
+| [README.md](README.md) | Project overview, setup instructions, support scope and this navigation map. |
+| [CHANGELOG.md](CHANGELOG.md) | Versioned changes and unreleased updates. |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Contribution workflow, validation expectations and commit-message guidance. |
+| [GOVERNANCE.md](GOVERNANCE.md) | Upstream access, maintainer handover and independent continuation. |
+| [LICENSE](LICENSE) | Project license text; source headers state GPL-2.0-or-later. |
+| [THIRD-PARTY.md](THIRD-PARTY.md) | Dependency versions, use and upstream license/source locations. |
+| [version.json](version.json) | Release version read by the build, installer and packaging scripts. |
+| [.gitattributes](.gitattributes) | Source text and line-ending rules. |
+| [.gitignore](.gitignore) | Excludes generated outputs, caches and local test artifacts from Git. |
+
 ## Build from complete source
 
 Requirements: Windows x64, Node.js 22+, Git. No Visual Studio or private SDK is required.

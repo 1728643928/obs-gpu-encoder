@@ -39,6 +39,23 @@
 
 已在 RX 9060 XT 渲染、9700X 核显 H.264 编码环境验证。此前原生 OBS 本地 RTMP 测试约 47 秒，视频与音频接收解码成功；0.2.0 再次通过 300 帧编码测试。HEVC/AV1 仅有能力探测，未完成同等级直播验收；公网平台接收、游戏性能和其他显卡/OBS 版本尚未验证。此版本仍为预览版。
 
+## 目录与文件职责
+
+GitHub 文件列表中间一列显示的是**最近一次提交说明**，不是每个文件的自定义介绍；同一次提交涉及多个文件时，说明会相同。实际职责请对照此表或进入目录查看 README。
+
+| 目录 | 内容与入口 |
+| --- | --- |
+| [.github/](../.github/README.md) | 云端构建、测试、发版工作流和问题模板。 |
+| [data/](../data/README.md) | OBS 插件的英中日韩四语文本。 |
+| [docs/](README.md) | 入门、架构、测试、验证记录及维护交接。 |
+| [installer/](../installer/README.md) | EXE 安装向导、OBS 扫描、路径校验和四语提示。 |
+| [scripts/](../scripts/README.md) | 构建、翻译校验、安装测试、打包与发布脚本。 |
+| [src/](../src/README.md) | OBS 接入、AMD 编码后端、设备筛选及独立进程通信。 |
+| [tests/](../tests/README.md) | 协议/筛选回归、显卡编码测试和文件锁辅助程序。 |
+| [third-party/](../third-party/README.md) | 第三方运行时、工具链和安装器声明。 |
+
+根目录的 [CHANGELOG.md](../CHANGELOG.md) 记录版本变化，[CONTRIBUTING.md](../CONTRIBUTING.md) 说明贡献流程，[GOVERNANCE.md](../GOVERNANCE.md) 说明维护权限与接手，[LICENSE](../LICENSE) 保存许可证，[THIRD-PARTY.md](../THIRD-PARTY.md) 说明依赖，[version.json](../version.json) 保存构建使用的版本号。[.gitattributes](../.gitattributes) 管理文本换行，[.gitignore](../.gitignore) 排除编译缓存及测试产物。
+
 ## 构建、接手与分支
 
 Windows x64、Node.js 22+、Git：
