@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Add file-by-file guides for native source, installer, scripts, tests, locale resources, CI and third-party notices.
+- Add repository maps to the English, Chinese, Japanese and Korean getting-started guides.
+- Explain GitHub's last-commit column and contribution/handover entry points.
+- This documentation update does not change encoder behavior, installer behavior, version number or existing release assets.
+
 ## 0.2.0-preview
 
 - Four plugin and installer languages, English-first homepage and translated getting-started docs.
