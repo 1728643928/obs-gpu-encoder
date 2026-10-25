@@ -30,10 +30,10 @@ Fork 후 기능 브랜치를 만들고 범위를 명확히 한 변경을 PR로 �
 
 Before editing an unfamiliar area, read its directory guide: [native source](src/README.md), [installer](installer/README.md), [scripts](scripts/README.md), [tests](tests/README.md), [resources](data/README.md), [documentation](docs/README.md) or [automation](.github/AUTOMATION.md).
 
-Use a commit title that states the affected module and the actual change. For example, **fix(installer): preserve the explicit OBS destination** or **docs(src): explain worker IPC ownership**. Keep related changes together; shared messages across paths are expected when one commit changes those paths. Do not change untouched code or rewrite published history solely to alter the file-list label.
+Use a short, plain-English commit title that states the affected module and the actual change. For example, **Preserve the explicit OBS installation path** or **Explain worker IPC ownership**. Type and scope prefixes are optional; this project uses direct descriptions. Keep related changes together; shared messages across paths are expected when one commit changes those paths. Avoid cosmetic history rewrites during routine maintenance.
 
-中文：先读对应目录说明；提交标题写清模块和实际改动，相关文件可以共用同一提交说明。保留已发布历史，不为列表显示修改无关代码。
+中文：先读对应目录说明；提交标题用简短直白的英文写清模块和实际改动，不要求分类前缀。相关文件可以共用同一提交说明，日常维护不为列表显示重写历史。
 
-日本語：対象の README を読み、コミットにはモジュールと実際の変更を記載してください。関連ファイルは同一コミットで構いません。表示だけを目的に無関係な実装や公開履歴を変更しないでください。
+日本語：対象の README を読み、コミットにはモジュールと実際の変更を短い平易な英語で記載してください。分類プレフィックスは必須ではありません。関連ファイルは同一コミットで構いません。通常の保守では表示のためだけに履歴を書き換えないでください。
 
-한국어: 해당 README를 먼저 읽고 커밋 제목에 모듈과 실제 변경을 적으세요. 관련 파일은 같은 커밋에 포함할 수 있습니다. 표시만 바꾸기 위해 무관한 구현이나 공개 이력을 수정하지 마세요.
+한국어: 해당 README를 먼저 읽고 커밋 제목에 모듈과 실제 변경을 짧고 쉬운 영어로 적으세요. 분류 접두사는 필수가 아닙니다. 관련 파일은 같은 커밋에 포함할 수 있습니다. 일반 유지보수에서는 표시만 바꾸기 위해 이력을 다시 쓰지 마세요.
