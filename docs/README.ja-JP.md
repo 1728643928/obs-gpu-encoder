@@ -45,7 +45,7 @@ GitHub のファイル一覧の中央列は**最後のコミットメッセー�
 
 | ディレクトリ | 内容 |
 | --- | --- |
-| [.github/](../.github/README.md) | CI、検証、公開と不具合テンプレート。 |
+| [.github/](../.github/AUTOMATION.md) | CI、検証、公開と不具合テンプレート。 |
 | [data/](../data/README.md) | OBS プラグインの 4 言語リソース。 |
 | [docs/](README.md) | 導入、構成、検証と引き継ぎガイド。 |
 | [installer/](../installer/README.md) | EXE、OBS 検索、配置先検証と翻訳。 |

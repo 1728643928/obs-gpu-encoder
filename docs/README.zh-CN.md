@@ -45,7 +45,7 @@ GitHub 文件列表中间一列显示的是**最近一次提交说明**，不是
 
 | 目录 | 内容与入口 |
 | --- | --- |
-| [.github/](../.github/README.md) | 云端构建、测试、发版工作流和问题模板。 |
+| [.github/](../.github/AUTOMATION.md) | 云端构建、测试、发版工作流和问题模板。 |
 | [data/](../data/README.md) | OBS 插件的英中日韩四语文本。 |
 | [docs/](README.md) | 入门、架构、测试、验证记录及维护交接。 |
 | [installer/](../installer/README.md) | EXE 安装向导、OBS 扫描、路径校验和四语提示。 |

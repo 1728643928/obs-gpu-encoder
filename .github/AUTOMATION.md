@@ -1,5 +1,7 @@
 # GitHub automation and issue intake
 
+This guide uses AUTOMATION.md so GitHub keeps the repository-root README as the project homepage.
+
 | Path | Responsibility / 职责 |
 | --- | --- |
 | [workflows/build.yml](workflows/build.yml) | Builds/tests the Windows plugin and installer, packages artifacts, and conditionally publishes a release. / 构建、测试、打包及条件发版。 |

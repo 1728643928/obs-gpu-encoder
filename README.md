@@ -54,7 +54,7 @@ GitHub's file list shows the **last commit message**, rather than a custom descr
 
 | Directory | Contents and starting point |
 | --- | --- |
-| [.github/](.github/README.md) | CI workflow and bug-report template; build/test/release rules. |
+| [.github/](.github/AUTOMATION.md) | CI workflow and bug-report template; build/test/release rules. |
 | [data/](data/README.md) | English, Chinese, Japanese and Korean OBS locale resources. |
 | [docs/](docs/README.md) | User guides, architecture, testing, validation and release handover. |
 | [installer/](installer/README.md) | EXE wizard, OBS scan/validation, installation paths and four-language messages. |

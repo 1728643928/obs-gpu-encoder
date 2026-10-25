@@ -45,7 +45,7 @@ GitHub 파일 목록 가운데 열은 **마지막 커밋 메시지**입니다. �
 
 | 디렉터리 | 내용 |
 | --- | --- |
-| [.github/](../.github/README.md) | CI, 검증, 게시와 버그 템플릿. |
+| [.github/](../.github/AUTOMATION.md) | CI, 검증, 게시와 버그 템플릿. |
 | [data/](../data/README.md) | OBS 플러그인의 네 언어 리소스. |
 | [docs/](README.md) | 시작, 구조, 검증과 인수 가이드. |
 | [installer/](../installer/README.md) | EXE, OBS 검색, 경로 검사와 번역. |

@@ -28,7 +28,7 @@ Fork 후 기능 브랜치를 만들고 범위를 명확히 한 변경을 PR로 �
 
 ## Module navigation and commit messages
 
-Before editing an unfamiliar area, read its directory README: [native source](src/README.md), [installer](installer/README.md), [scripts](scripts/README.md), [tests](tests/README.md), [resources](data/README.md), [documentation](docs/README.md) or [automation](.github/README.md).
+Before editing an unfamiliar area, read its directory guide: [native source](src/README.md), [installer](installer/README.md), [scripts](scripts/README.md), [tests](tests/README.md), [resources](data/README.md), [documentation](docs/README.md) or [automation](.github/AUTOMATION.md).
 
 Use a commit title that states the affected module and the actual change. For example, **fix(installer): preserve the explicit OBS destination** or **docs(src): explain worker IPC ownership**. Keep related changes together; shared messages across paths are expected when one commit changes those paths. Do not change untouched code or rewrite published history solely to alter the file-list label.
 
