@@ -1,3 +1,4 @@
+# Detect text files; keep hand-edited source and documentation LF-normalized.
 * text=auto
 *.cpp text eol=lf
 *.hpp text eol=lf

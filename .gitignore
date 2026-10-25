@@ -1,6 +1,8 @@
+# Rebuildable compilation outputs and downloaded dependencies.
 /build/
 /dist/
 /_deps/
+# Local IDE state, symbols and developer-only test media/logs.
 *.user
 *.suo
 *.pdb
@@ -10,4 +12,5 @@
 *.flv
 *.log
 
+# Release assets are published through GitHub Releases rather than Git source.
 /release/
