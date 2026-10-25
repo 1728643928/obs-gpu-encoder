@@ -1,0 +1,67 @@
+name: Build, test and release
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publish a new release from the default branch (bump version.json first)'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: build-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: windows-latest
+    outputs:
+      publish: ${{ steps.intent.outputs.publish }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - name: Decide release intent
+        id: intent
+        run: node scripts/ci-release-intent.mjs
+      - name: Check all four languages
+        run: node scripts/check-locales.mjs
+      - name: Build plugin and run unit tests
+        run: node scripts/build.mjs --download-obs --tests
+      - name: Build four-language installer
+        run: node scripts/build-installer.mjs
+      - name: Test installation and uninstall in disposable fixtures
+        run: node scripts/test-installer.mjs
+      - name: Package complete source, plugin and checksums
+        run: node scripts/package.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: windows-x64-release-assets
+          path: release/*
+          if-no-files-found: error
+  publish:
+    needs: build
+    if: needs.build.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: windows-x64-release-assets
+          path: release
+      - name: Publish release only after all assets upload
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/publish-release.mjs

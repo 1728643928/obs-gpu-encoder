@@ -1,0 +1,31 @@
+# Validation record — 0.1.0-preview
+
+2026-10-25, Windows 11, OBS Studio 33.0.0 x64.
+
+- OBS rendering adapter: AMD Radeon RX 9060 XT (DXGI 0).
+- Encoding adapter: AMD Radeon(TM) Graphics (DXGI 1, PCI 1002:13c0).
+- AMD iGPU capability probes: H.264 and HEVC passed; AV1 rejected. RX 9060 XT probes: H.264, HEVC and AV1 passed.
+- Direct and isolated-worker H.264 harnesses: 300 input frames / 300 output packets at 1920×1080, 60 fps, with 3 keyframes over 5 seconds. Elementary streams decoded successfully.
+- Changed GPU LUID was rejected by the worker rather than selecting another adapter.
+- Protocol tests passed UTF-8 and settings roundtrip, truncated input, oversized packet count and trailing-data rejection.
+- OBS native Start Streaming → local RTMP receiver: 2842 H.264 frames received over approximately 47.35 seconds at 1080p60. AAC packets were present. Video and audio timestamps were strictly increasing. All 23 observed keyframe intervals were 2000 ms. Receiver and full audio/video decoder exited with code 0 and no decoder errors.
+- OBS startup log retained the RX 9060 XT rendering device; encoder log selected the iGPU explicitly.
+- OBS output settings displayed the native iGPU entry and localized controls. A separate preview profile preserves the original platform configuration. Twitch Enhanced Broadcasting was disabled only in the preview so it cannot replace the selected encoder.
+
+Public-platform receiving, gaming performance, HDR, 10-bit, Intel, NVIDIA and other OBS versions were not validated. HEVC/AV1 received capability probes, not the same full OBS streaming acceptance as iGPU H.264. Audio was decoded but not auditioned. The RTMP test recording and private OBS profiles are excluded from distributed artifacts.
+
+## 0.1.1 adapter filtering regression
+
+The duplicate RX 9060 XT entry at DXGI index 2 had D3DKMT type 0x342 (IndirectDisplayDevice=1, RenderSupported=0) and no valid PCI address. It is a display-only indirect adapter rather than a second physical rendering GPU. The physical RX 9060 XT at DXGI 0 and iGPU at DXGI 1 were retained.
+
+Adapter-policy regression tests passed, including preserving two real identical-model cards and retaining unknown-query adapters. The fixed worker enumerated exactly the two actual rendering GPUs and again encoded 300/300 iGPU H.264 frames with 3 keyframes.
+
+## 0.2.0 four-language installer and public release build
+
+- Four OBS locale key sets and installer message key sets match; referenced messages have translations.
+- Plugin/worker compiled; protocol and adapter-policy tests passed.
+- 9700X iGPU H.264: 300 submitted frames, 300 packets, 3 keyframes; altered LUID rejected. Exactly one physical RX 9060 XT and one iGPU were enumerated.
+- Release installer ran in four language modes against disposable Unicode/space path fixtures. Plugin DLL, worker and all four locale files installed; uninstall preserved an unrelated plugin and an unrecorded user file. A real OBS executable supplied the version resource; fixture DLL placeholders were never loaded.
+- Invalid root and a target file held with an exclusive Win32 handle were rejected before plugin files were copied.
+- The /DIR command-line regression preserves the explicitly selected target rather than replacing it with a detected installation.
+- Interactive installer showed all four language options. Japanese discovery UI detected the real OBS installation, scanned more than 24,000 directories across local fixed drives and stopped on request with navigation re-enabled. This checked start/cancel behavior; it was not an exhaustive completion of every drive. The UI test used the identical wizard script with the privilege requirement lowered for the test copy only.

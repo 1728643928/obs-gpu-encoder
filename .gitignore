@@ -1,0 +1,13 @@
+/build/
+/dist/
+/_deps/
+*.user
+*.suo
+*.pdb
+*.h264
+*.hevc
+*.mkv
+*.flv
+*.log
+
+/release/
