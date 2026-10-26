@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Add real OBS GPU/codec selection, iGPU settings and installer-discovery screenshots with four-language captions.
+
 - Redesign the four-language README with original GPU-role artwork, direct installer links and clearly scoped validation results.
 
 - Add file-by-file guides for native source, installer, scripts, tests, locale resources, CI and third-party notices.

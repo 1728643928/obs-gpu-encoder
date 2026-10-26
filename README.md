@@ -16,6 +16,27 @@ GPU Encoder Bridge adds native, GPU-named encoders to OBS. Use an AMD iGPU or an
 
 OBS still handles your streaming platform, audio, network connection and Start/Stop Streaming buttons. The plugin needs no separate control app.
 
+## Inside OBS
+
+Open **Settings → Output → Advanced → Streaming → Video Encoder** and choose an entry ending in **AMF Bridge**.
+
+<p align="center">
+  <img src="assets/readme/obs-gpu-selection.jpg" width="760" alt="Real OBS encoder list: RX 9060 XT with AV1, H.264 and HEVC; Radeon integrated graphics with H.264 and HEVC; the iGPU H.264 entry is selected.">
+</p>
+
+This real 0.2.0-preview capture shows two GPUs and their available formats. **AMD HW** entries are OBS's built-in encoders; this plugin adds the GPU-named **AMF Bridge** entries. A streaming service may hide formats it does not accept.
+
+<details>
+<summary>See the selected iGPU and its encoder controls</summary>
+
+<p align="center">
+  <img src="assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS Advanced Output settings with Radeon integrated graphics selected for H.264, CBR at 6000 Kbps, 2-second keyframes and the Balanced preset.">
+</p>
+
+The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are example values, not a performance result. Screenshots use the English UI; the plugin also provides Chinese, Japanese and Korean.
+
+</details>
+
 ## Verified on a real two-GPU setup
 
 **Rendering: Radeon RX 9060 XT · Encoding: Ryzen 7 9700X integrated graphics, H.264**
@@ -45,6 +66,17 @@ These are scoped validation results, not gaming benchmarks. HEVC/AV1 have capabi
 A typical entry is **AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**. GPU numbers reflect the current DXGI order; recheck the selection after hardware changes.
 
 For an initial configuration, the plugin provides H.264, CBR, 2-second keyframes and Balanced. Set bitrate to your platform's requirements. Disable Twitch Enhanced Broadcasting if it would override your chosen encoder.
+
+<details>
+<summary>See the installer find OBS</summary>
+
+<p align="center">
+  <img src="assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge installer detects an OBS folder and offers an optional Scan all local fixed drives button.">
+</p>
+
+The wizard finds an existing OBS installation, offers an optional full scan and lets you continue to validate the OBS root. This screenshot shows the discovery step, before installation.
+
+</details>
 
 <details>
 <summary>Where the installer puts files, and what the disk scan does</summary>

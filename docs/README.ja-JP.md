@@ -16,6 +16,27 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
 
 配信サービス、音声、ネットワーク、配信開始・停止は引き続き OBS が担当します。別の制御アプリは不要です。
 
+## OBS での表示
+
+**設定 → 出力 → 詳細 → 配信 → 映像エンコーダー**を開き、**AMF Bridge** と付いた項目を選択します。
+
+<p align="center">
+  <img src="../assets/readme/obs-gpu-selection.jpg" width="760" alt="実際の OBS 一覧。RX 9060 XT は AV1、H.264、HEVC、Radeon 内蔵 GPU は H.264、HEVC に対応し、内蔵 GPU の H.264 を選択。">
+</p>
+
+0.2.0-preview の実際の画面で、2 台の GPU と利用可能な形式を示しています。**AMD HW** は OBS 標準のエンコーダーです。本プラグインは GPU 名付きの **AMF Bridge** 項目を追加します。配信サービスによって形式が非表示になることがあります。
+
+<details>
+<summary>内蔵 GPU 選択後のエンコーダー設定を見る</summary>
+
+<p align="center">
+  <img src="../assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS 詳細出力で Radeon 内蔵 GPU の H.264 を選択。CBR、6000 Kbps、キーフレーム 2 秒、バランスを表示。">
+</p>
+
+選択したデバイスは Ryzen 7 9700X 内蔵 GPU です。ビットレートとプリセットは設定例であり、性能の測定結果ではありません。画面は英語ですが、中国語、日本語、韓国語にも対応します。
+
+</details>
+
 ## 実際の 2 GPU 環境で確認
 
 **描画：Radeon RX 9060 XT · エンコード：Ryzen 7 9700X 内蔵 GPU、H.264**
@@ -45,6 +66,17 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
 表示例：**AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**。GPU 番号は現在の DXGI 列挙順です。ハードウェア変更後は再確認してください。
 
 最初の設定には H.264、CBR、キーフレーム 2 秒、バランスを利用できます。ビットレートはサービスの要件に合わせてください。選択したエンコーダーを上書きする場合は Twitch Enhanced Broadcasting を無効にしてください。
+
+<details>
+<summary>OBS を検出するインストーラーを見る</summary>
+
+<p align="center">
+  <img src="../assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge インストーラーが OBS フォルダーを検出し、全ローカル固定ドライブ検索を提供。">
+</p>
+
+検出した OBS を一覧表示し、任意の全ドライブ検索と、続行後のルート検証を提供します。画面はインストール前の検出段階です。
+
+</details>
 
 <details>
 <summary>正確な配置先とドライブ検索の範囲</summary>

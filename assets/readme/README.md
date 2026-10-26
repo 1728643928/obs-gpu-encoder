@@ -26,3 +26,19 @@ Original artwork and generator are covered by the project's GPL-2.0-or-later lic
 日本語：生成スクリプト内の翻訳を編集して再実行してください。図は役割の説明であり、実際の UI や性能比較ではありません。
 
 한국어: 생성 스크립트의 번역을 수정한 뒤 다시 실행하세요. 이미지는 역할 개념도이며 실제 UI 화면이나 성능 비교가 아닙니다.
+
+## Real product screenshots
+
+Captured on 2026-10-26 with Windows 11, OBS Studio 33.0.0 and the published GPU Encoder Bridge 0.2.0-preview binaries. These JPEGs are bounded native UI captures, not generated interface mockups.
+
+| File | What it demonstrates |
+| --- | --- |
+| [obs-gpu-selection.jpg](obs-gpu-selection.jpg) | The actual encoder popup, with five GPU-named AMF Bridge entries across RX 9060 XT and Ryzen 7 9700X integrated graphics. OBS built-in encoders remain visible. |
+| [obs-encoder-settings.jpg](obs-encoder-settings.jpg) | OBS Advanced Output with iGPU H.264 selected, plus rate control, bitrate, keyframe interval and preset. |
+| [installer-obs-discovery.jpg](installer-obs-discovery.jpg) | The published EXE detecting an OBS installation and offering an optional fixed-drive scan, before installation. |
+
+The OBS screenshots use an isolated portable profile with no account, stream key or private scene. Custom service was selected to expose all available codec choices; other services can filter the list. The demo rendered on RX 9060 XT and selected the 9700X iGPU for encoding. It did not start a stream or recording, so the screenshots are UI examples rather than new end-to-end validation.
+
+The installer was opened in current-user mode, captured at the discovery step and cancelled. No plugin installation was performed. The full scan button is visible, but the screenshot does not claim a completed scan.
+
+Keep screenshots as real captures when the UI changes. The SVG generator does not create or modify these files. All four README languages share the English screenshots with localized captions and alt text.

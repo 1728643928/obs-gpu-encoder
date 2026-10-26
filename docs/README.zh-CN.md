@@ -16,6 +16,27 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 
 直播平台、音频、网络连接与开始/停止直播仍由 OBS 负责，无需另开控制软件。
 
+## 在 OBS 里是什么样
+
+打开 **设置 → 输出 → 高级 → 直播 → 视频编码器**，选择带 **AMF Bridge** 后缀的条目。
+
+<p align="center">
+  <img src="../assets/readme/obs-gpu-selection.jpg" width="760" alt="真实 OBS 编码器列表：RX 9060 XT 提供 AV1、H.264、HEVC，Radeon 核显提供 H.264、HEVC，当前选中核显 H.264。">
+</p>
+
+这是 0.2.0-preview 的实际界面，展示两张显卡与各自可用格式。**AMD HW** 是 OBS 自带编码器；本插件新增的是标有显卡名称与 **AMF Bridge** 的条目。直播平台可能隐藏不支持的格式。
+
+<details>
+<summary>查看选中核显后的完整编码设置</summary>
+
+<p align="center">
+  <img src="../assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS 高级输出中选中 Radeon 核显 H.264，显示 CBR、6000 Kbps、2 秒关键帧与均衡预设。">
+</p>
+
+这里选择的是 Ryzen 7 9700X 核显。码率和预设是示例配置，不代表性能测试结果。截图使用英文界面，插件也支持中文、日文和韩文。
+
+</details>
+
 ## 已在真实双显卡环境验证
 
 **渲染：Radeon RX 9060 XT · 编码：Ryzen 7 9700X 核显，H.264**
@@ -45,6 +66,17 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 条目示例：**AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**。GPU 编号是当前 DXGI 枚举顺序，硬件变更后请重新检查。
 
 可从 H.264、CBR、关键帧 2 秒、均衡开始设置，码率按平台要求填写。需要固定编码器时，请关闭可能覆盖选择的 Twitch Enhanced Broadcasting。
+
+<details>
+<summary>查看安装器如何查找 OBS</summary>
+
+<p align="center">
+  <img src="../assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge 安装器找到 OBS 目录，并提供扫描全部本地固定磁盘的按钮。">
+</p>
+
+向导列出发现的 OBS 位置，支持可选全盘扫描，继续后校验 OBS 根目录。图中展示的是安装前的查找步骤。
+
+</details>
 
 <details>
 <summary>具体安装位置与全盘扫描范围</summary>
