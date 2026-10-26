@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 0.3.1
+
+- Replace shared screenshots with 16 native captures matching all four README languages.
+- Document screenshot provenance and preserve the actual installation's daily-use configuration.
+- Publish a regular release and explicitly mark regular versions as Latest only after every asset uploads; keep prereleases separate.
+- Keep the encoder implementation and Enhanced Broadcasting experimental validation scope unchanged from 0.3.0-preview.
+
 ## 0.3.0-preview
 
 - Add per-profile Enhanced Broadcasting GPU selection through the Tools menu.

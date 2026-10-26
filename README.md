@@ -6,9 +6,9 @@
   <img src="assets/readme/hero-en.svg" width="100%" alt="GPU Encoder Bridge for OBS: keep the game and OBS rendering on your gaming GPU, and choose an AMD GPU for encoding.">
 </p>
 
-**[Download the Windows installer →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [All downloads](https://github.com/1728643928/obs-gpu-encoder/releases) · [Documentation](docs/README.md) · [Report a bug](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Download the Windows installer →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [All downloads](https://github.com/1728643928/obs-gpu-encoder/releases) · [Documentation](docs/README.md) · [Report a bug](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **Choose the encoding GPU by its actual name. Keep OBS on your gaming GPU.**
 
@@ -21,19 +21,19 @@ OBS still handles your streaming platform, audio, network connection and Start/S
 Open **Settings → Output → Advanced → Streaming → Video Encoder** and choose an entry ending in **AMF Bridge**.
 
 <p align="center">
-  <img src="assets/readme/obs-gpu-selection.jpg" width="760" alt="Real OBS encoder list: RX 9060 XT with AV1, H.264 and HEVC; Radeon integrated graphics with H.264 and HEVC; the iGPU H.264 entry is selected.">
+  <img src="assets/readme/screenshots/en/obs-gpu-selection.jpg" width="100%" alt="Real OBS encoder list: RX 9060 XT with AV1, H.264 and HEVC; Radeon integrated graphics with H.264 and HEVC; the iGPU H.264 entry is selected.">
 </p>
 
-This real 0.2.0-preview capture shows two GPUs and their available formats. **AMD HW** entries are OBS's built-in encoders; this plugin adds the GPU-named **AMF Bridge** entries. A streaming service may hide formats it does not accept.
+This real 0.3.0-preview capture shows two GPUs and their available formats. **AMD HW** entries are OBS's built-in encoders; this plugin adds the GPU-named **AMF Bridge** entries. A streaming service may hide formats it does not accept.
 
 <details>
 <summary>See the selected iGPU and its encoder controls</summary>
 
 <p align="center">
-  <img src="assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS Advanced Output settings with Radeon integrated graphics selected for H.264, CBR at 6000 Kbps, 2-second keyframes and the Balanced preset.">
+  <img src="assets/readme/screenshots/en/obs-encoder-settings.jpg" width="100%" alt="OBS Advanced Output settings with Radeon integrated graphics selected for H.264, CBR at 6000 Kbps, 2-second keyframes and the Balanced preset.">
 </p>
 
-The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are example values, not a performance result. Screenshots use the English UI; the plugin also provides Chinese, Japanese and Korean.
+The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are example values, not a performance result. Screenshots on this page use the English UI. Switch the page language above to see matching Chinese, Japanese or Korean captures.
 
 </details>
 
@@ -44,7 +44,7 @@ The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are 
 Independent recording choices stay unchanged. OBS's own enhanced-stream dump follows the live encoders. Missing GPUs and incompatible plans block startup instead of falling back to another GPU. [Setup, behavior and limits →](docs/enhanced-broadcasting.md)
 
 <p align="center">
-  <img src="assets/readme/enhanced-gpu-settings.jpg" width="632" alt="Actual 0.3.0 Tools dialog with forced Enhanced Broadcasting encoding enabled and AMD Radeon integrated graphics GPU 1 selected. Chinese interface shown.">
+  <img src="assets/readme/screenshots/en/enhanced-gpu-settings.jpg" width="632" alt="Actual 0.3.0 Tools dialog with forced Enhanced Broadcasting encoding enabled and AMD Radeon integrated graphics GPU 1 selected. English interface shown.">
 </p>
 
 ## Verified on a real two-GPU setup
@@ -81,7 +81,7 @@ For an initial configuration, the plugin provides H.264, CBR, 2-second keyframes
 <summary>See the installer find OBS</summary>
 
 <p align="center">
-  <img src="assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge installer detects an OBS folder and offers an optional Scan all local fixed drives button.">
+  <img src="assets/readme/screenshots/en/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge installer detects an OBS folder and offers an optional Scan all local fixed drives button.">
 </p>
 
 The wizard finds an existing OBS installation, offers an optional full scan and lets you continue to validate the OBS root. This screenshot shows the discovery step, before installation.

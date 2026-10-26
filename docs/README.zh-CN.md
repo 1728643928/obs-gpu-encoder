@@ -6,9 +6,9 @@
   <img src="../assets/readme/hero-zh-cn.svg" width="100%" alt="GPU Encoder Bridge：游戏与 OBS 渲染继续使用独显，另外指定 AMD 核显或其他 AMD 显卡编码。">
 </p>
 
-**[下载 Windows 安装器 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [全部下载](https://github.com/1728643928/obs-gpu-encoder/releases) · [文档索引](README.md) · [问题反馈](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[下载 Windows 安装器 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [全部下载](https://github.com/1728643928/obs-gpu-encoder/releases) · [文档索引](README.md) · [问题反馈](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **按真实显卡名选择编码设备，OBS 继续在游戏显卡上运行。**
 
@@ -21,19 +21,19 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 打开 **设置 → 输出 → 高级 → 直播 → 视频编码器**，选择带 **AMF Bridge** 后缀的条目。
 
 <p align="center">
-  <img src="../assets/readme/obs-gpu-selection.jpg" width="760" alt="真实 OBS 编码器列表：RX 9060 XT 提供 AV1、H.264、HEVC，Radeon 核显提供 H.264、HEVC，当前选中核显 H.264。">
+  <img src="../assets/readme/screenshots/zh-cn/obs-gpu-selection.jpg" width="100%" alt="真实 OBS 编码器列表：RX 9060 XT 提供 AV1、H.264、HEVC，Radeon 核显提供 H.264、HEVC，当前选中核显 H.264。">
 </p>
 
-这是 0.2.0-preview 的实际界面，展示两张显卡与各自可用格式。**AMD HW** 是 OBS 自带编码器；本插件新增的是标有显卡名称与 **AMF Bridge** 的条目。直播平台可能隐藏不支持的格式。
+这是 0.3.0-preview 的实际界面，展示两张显卡与各自可用格式。**AMD HW** 是 OBS 自带编码器；本插件新增的是标有显卡名称与 **AMF Bridge** 的条目。直播平台可能隐藏不支持的格式。
 
 <details>
 <summary>查看选中核显后的完整编码设置</summary>
 
 <p align="center">
-  <img src="../assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS 高级输出中选中 Radeon 核显 H.264，显示 CBR、6000 Kbps、2 秒关键帧与均衡预设。">
+  <img src="../assets/readme/screenshots/zh-cn/obs-encoder-settings.jpg" width="100%" alt="OBS 高级输出中选中 Radeon 核显 H.264，显示 CBR、6000 Kbps、2 秒关键帧与均衡预设。">
 </p>
 
-这里选择的是 Ryzen 7 9700X 核显。码率和预设是示例配置，不代表性能测试结果。截图使用英文界面，插件也支持中文、日文和韩文。
+这里选择的是 Ryzen 7 9700X 核显。码率和预设是示例配置，不代表性能测试结果。本页截图使用简体中文界面；切换页面语言即可查看对应的英文、日文或韩文截图。
 
 </details>
 
@@ -44,7 +44,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 独立录制的编码选项与设置保持独立；增强广播自带的直播副本跟随直播编码。显卡缺失或方案不兼容时阻止启动，不自动改用其他显卡。[操作步骤、原理与限制 →](enhanced-broadcasting.md)
 
 <p align="center">
-  <img src="../assets/readme/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 实际工具窗口：已勾选强制增强广播编码，并选择 AMD Radeon 核显 GPU 1。">
+  <img src="../assets/readme/screenshots/zh-cn/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 实际工具窗口：已勾选强制增强广播编码，并选择 AMD Radeon 核显 GPU 1。">
 </p>
 
 ## 已在真实双显卡环境验证
@@ -81,7 +81,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 <summary>查看安装器如何查找 OBS</summary>
 
 <p align="center">
-  <img src="../assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge 安装器找到 OBS 目录，并提供扫描全部本地固定磁盘的按钮。">
+  <img src="../assets/readme/screenshots/zh-cn/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge 安装器找到 OBS 目录，并提供扫描全部本地固定磁盘的按钮。">
 </p>
 
 向导列出发现的 OBS 位置，支持可选全盘扫描，继续后校验 OBS 根目录。图中展示的是安装前的查找步骤。

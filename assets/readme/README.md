@@ -31,22 +31,26 @@ Original artwork and generator are covered by the project's GPL-2.0-or-later lic
 
 The README redesign used [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) as guidance for content hierarchy, a project-specific visual identity, accessible SVGs and desktop/mobile review. The GPU-role artwork and generator were created for this repository. [THIRD-PARTY.md](../../THIRD-PARTY.md#readme-design-reference) records the reference snapshot and scope.
 
-## Real product screenshots
+## Localized product screenshots
 
-Captured on 2026-10-26 with Windows 11, OBS Studio 33.0.0 and the published GPU Encoder Bridge 0.2.0-preview binaries. These JPEGs are bounded native UI captures, not generated interface mockups.
+Captured on 2026-10-27 with Windows 11, OBS Studio 33.0.0 and GPU Encoder Bridge 0.3.0-preview. The 0.3.1 documentation/release update does not change the encoder implementation or these controls. These are native, bounded UI captures; no translated text is painted over an image.
 
-| File | What it demonstrates |
+| Page language | Capture folder |
 | --- | --- |
-| [obs-gpu-selection.jpg](obs-gpu-selection.jpg) | The actual encoder popup, with five GPU-named AMF Bridge entries across RX 9060 XT and Ryzen 7 9700X integrated graphics. OBS built-in encoders remain visible. |
-| [obs-encoder-settings.jpg](obs-encoder-settings.jpg) | OBS Advanced Output with iGPU H.264 selected, plus rate control, bitrate, keyframe interval and preset. |
-| [installer-obs-discovery.jpg](installer-obs-discovery.jpg) | The published EXE detecting an OBS installation and offering an optional fixed-drive scan, before installation. |
+| English | [screenshots/en/](screenshots/en/) |
+| 简体中文 | [screenshots/zh-cn/](screenshots/zh-cn/) |
+| 日本語 | [screenshots/ja/](screenshots/ja/) |
+| 한국어 | [screenshots/ko/](screenshots/ko/) |
 
-The OBS screenshots use an isolated portable profile with no account, stream key or private scene. Custom service was selected to expose all available codec choices; other services can filter the list. The demo rendered on RX 9060 XT and selected the 9700X iGPU for encoding. It did not start a stream or recording, so the screenshots are UI examples rather than new end-to-end validation.
+Each folder contains the same four views in that language:
 
-The installer was opened in current-user mode, captured at the discovery step and cancelled. No plugin installation was performed. The full scan button is visible, but the screenshot does not claim a completed scan.
+- **obs-gpu-selection.jpg** — Advanced Output with the video-encoder popup open. The full settings window provides localized context around GPU/codec names.
+- **obs-encoder-settings.jpg** — iGPU H.264 selected with CBR, 6000 Kbps, 2-second keyframes and Balanced.
+- **enhanced-gpu-settings.jpg** — the profile-specific Tools dialog with forced iGPU encoding enabled.
+- **installer-obs-discovery.jpg** — the localized EXE discovery step, detecting the actual OBS installation and offering the optional local fixed-drive scan.
 
-Keep screenshots as real captures when the UI changes. The SVG generator does not create or modify these files. All four README languages share the English screenshots with localized captions and alt text.
+All OBS images use the user's existing OBS executable and installed plugin, with a disposable, account-free portable configuration. No other OBS installation was downloaded. A blank custom service exposes all probed formats; no stream or recording was started. The original daily-use profiles, scenes, language and enhanced-broadcast settings were not changed. The temporary configuration was removed after capture.
 
-## Enhanced-broadcast settings capture
+Each installer language was opened in current-user mode, captured before installation and cancelled. No installation or full-disk scan was performed for these pictures.
 
-[enhanced-gpu-settings.jpg](enhanced-gpu-settings.jpg) was captured on 2026-10-27 from the actual user installation of OBS Studio 33.0.0 with GPU Encoder Bridge 0.3.0-preview. It shows the Simplified Chinese Tools dialog after saving and reopening the forced iGPU selection. Only the bounded plugin dialog is included; no scene, account, key or platform configuration appears in the asset. The other README languages use translated alt text. This is a configuration example, not proof of public Twitch receiving.
+Keep the screenshots and all four README image paths synchronized. GPU model names, codec names and the product name intentionally retain their original spelling. The SVG generator does not create or modify screenshots. These images demonstrate configuration, not public-platform receiving or performance.

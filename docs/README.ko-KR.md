@@ -6,9 +6,9 @@
   <img src="../assets/readme/hero-ko.svg" width="100%" alt="GPU Encoder Bridge: 게임과 OBS 렌더링은 게임용 GPU에 두고 인코딩할 AMD GPU를 따로 선택합니다.">
 </p>
 
-**[Windows 설치 프로그램 다운로드 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [모든 다운로드](https://github.com/1728643928/obs-gpu-encoder/releases) · [문서](README.md) · [버그 신고](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Windows 설치 프로그램 다운로드 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [모든 다운로드](https://github.com/1728643928/obs-gpu-encoder/releases) · [문서](README.md) · [버그 신고](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **실제 GPU 이름으로 인코딩 장치를 선택하세요. OBS는 게임 GPU에서 계속 실행됩니다.**
 
@@ -21,19 +21,19 @@ GPU Encoder Bridge는 GPU 이름이 표시되는 기본 인코더를 OBS에 추�
 **설정 → 출력 → 고급 → 방송 → 비디오 인코더**에서 **AMF Bridge**로 끝나는 항목을 선택합니다.
 
 <p align="center">
-  <img src="../assets/readme/obs-gpu-selection.jpg" width="760" alt="실제 OBS 목록. RX 9060 XT는 AV1, H.264, HEVC, Radeon 내장 GPU는 H.264와 HEVC를 제공하며 내장 GPU H.264가 선택되어 있습니다.">
+  <img src="../assets/readme/screenshots/ko/obs-gpu-selection.jpg" width="100%" alt="실제 OBS 목록. RX 9060 XT는 AV1, H.264, HEVC, Radeon 내장 GPU는 H.264와 HEVC를 제공하며 내장 GPU H.264가 선택되어 있습니다.">
 </p>
 
-0.2.0-preview의 실제 화면으로 두 GPU와 사용 가능한 형식을 보여 줍니다. **AMD HW**는 OBS 기본 인코더이며, 이 플러그인은 GPU 이름이 붙은 **AMF Bridge** 항목을 추가합니다. 방송 서비스가 지원하지 않는 형식은 숨겨질 수 있습니다.
+0.3.0-preview의 실제 화면으로 두 GPU와 사용 가능한 형식을 보여 줍니다. **AMD HW**는 OBS 기본 인코더이며, 이 플러그인은 GPU 이름이 붙은 **AMF Bridge** 항목을 추가합니다. 방송 서비스가 지원하지 않는 형식은 숨겨질 수 있습니다.
 
 <details>
 <summary>내장 GPU를 선택한 전체 인코더 설정 보기</summary>
 
 <p align="center">
-  <img src="../assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS 고급 출력에서 Radeon 내장 GPU H.264와 CBR, 6000 Kbps, 키프레임 2초, 균형 프리셋을 표시합니다.">
+  <img src="../assets/readme/screenshots/ko/obs-encoder-settings.jpg" width="100%" alt="OBS 고급 출력에서 Radeon 내장 GPU H.264와 CBR, 6000 Kbps, 키프레임 2초, 균형 프리셋을 표시합니다.">
 </p>
 
-선택한 장치는 Ryzen 7 9700X 내장 GPU입니다. 비트레이트와 프리셋은 설정 예시이며 성능 측정 결과가 아닙니다. 화면은 영어이며 플러그인은 중국어, 일본어와 한국어도 지원합니다.
+선택한 장치는 Ryzen 7 9700X 내장 GPU입니다. 비트레이트와 프리셋은 설정 예시이며 성능 측정 결과가 아닙니다. 이 페이지의 이미지는 한국어 UI입니다. 페이지 언어를 바꾸면 영어, 중국어 또는 일본어 이미지를 볼 수 있습니다.
 
 </details>
 
@@ -44,7 +44,7 @@ OBS의 향상된 방송을 켠 상태에서 **도구 → GPU Encoder Bridge: 향
 독립 녹화 설정은 변경하지 않습니다. 향상된 방송의 스트림 사본 저장은 방송 인코더를 공유합니다. GPU가 없거나 구성이 호환되지 않으면 시작을 차단하고 다른 GPU로 자동 전환하지 않습니다. [설정·동작·제한 →](enhanced-broadcasting.md)
 
 <p align="center">
-  <img src="../assets/readme/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 실제 설정 창에서 향상된 방송 GPU 고정을 켜고 Radeon 내장 GPU 1을 선택한 모습. 중국어 UI.">
+  <img src="../assets/readme/screenshots/ko/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 실제 설정 창에서 향상된 방송 GPU 고정을 켜고 Radeon 내장 GPU 1을 선택한 모습. 한국어 UI.">
 </p>
 
 ## 실제 두 GPU 환경에서 검증
@@ -81,7 +81,7 @@ OBS의 향상된 방송을 켠 상태에서 **도구 → GPU Encoder Bridge: 향
 <summary>OBS를 찾는 설치 프로그램 보기</summary>
 
 <p align="center">
-  <img src="../assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge 설치 프로그램이 OBS 폴더를 찾고 전체 로컬 고정 드라이브 검색 버튼을 제공합니다.">
+  <img src="../assets/readme/screenshots/ko/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge 설치 프로그램이 OBS 폴더를 찾고 전체 로컬 고정 드라이브 검색 버튼을 제공합니다.">
 </p>
 
 발견한 OBS 위치를 표시하고 선택적인 전체 드라이브 검색을 제공합니다. 계속하면 OBS 루트를 검사합니다. 이미지는 설치 전 탐색 단계입니다.

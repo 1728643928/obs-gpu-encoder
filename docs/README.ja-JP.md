@@ -6,9 +6,9 @@
   <img src="../assets/readme/hero-ja.svg" width="100%" alt="GPU Encoder Bridge：ゲームと OBS の描画用 GPU は維持し、エンコード用 AMD GPU を別に選択できます。">
 </p>
 
-**[Windows インストーラーをダウンロード →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [すべての配布物](https://github.com/1728643928/obs-gpu-encoder/releases) · [ドキュメント](README.md) · [不具合報告](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Windows インストーラーをダウンロード →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [すべての配布物](https://github.com/1728643928/obs-gpu-encoder/releases) · [ドキュメント](README.md) · [不具合報告](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **エンコード用 GPU を実際の名前で選択。OBS はゲーム用 GPU のまま。**
 
@@ -21,19 +21,19 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
 **設定 → 出力 → 詳細 → 配信 → 映像エンコーダー**を開き、**AMF Bridge** と付いた項目を選択します。
 
 <p align="center">
-  <img src="../assets/readme/obs-gpu-selection.jpg" width="760" alt="実際の OBS 一覧。RX 9060 XT は AV1、H.264、HEVC、Radeon 内蔵 GPU は H.264、HEVC に対応し、内蔵 GPU の H.264 を選択。">
+  <img src="../assets/readme/screenshots/ja/obs-gpu-selection.jpg" width="100%" alt="実際の OBS 一覧。RX 9060 XT は AV1、H.264、HEVC、Radeon 内蔵 GPU は H.264、HEVC に対応し、内蔵 GPU の H.264 を選択。">
 </p>
 
-0.2.0-preview の実際の画面で、2 台の GPU と利用可能な形式を示しています。**AMD HW** は OBS 標準のエンコーダーです。本プラグインは GPU 名付きの **AMF Bridge** 項目を追加します。配信サービスによって形式が非表示になることがあります。
+0.3.0-preview の実際の画面で、2 台の GPU と利用可能な形式を示しています。**AMD HW** は OBS 標準のエンコーダーです。本プラグインは GPU 名付きの **AMF Bridge** 項目を追加します。配信サービスによって形式が非表示になることがあります。
 
 <details>
 <summary>内蔵 GPU 選択後のエンコーダー設定を見る</summary>
 
 <p align="center">
-  <img src="../assets/readme/obs-encoder-settings.jpg" width="100%" alt="OBS 詳細出力で Radeon 内蔵 GPU の H.264 を選択。CBR、6000 Kbps、キーフレーム 2 秒、バランスを表示。">
+  <img src="../assets/readme/screenshots/ja/obs-encoder-settings.jpg" width="100%" alt="OBS 詳細出力で Radeon 内蔵 GPU の H.264 を選択。CBR、6000 Kbps、キーフレーム 2 秒、バランスを表示。">
 </p>
 
-選択したデバイスは Ryzen 7 9700X 内蔵 GPU です。ビットレートとプリセットは設定例であり、性能の測定結果ではありません。画面は英語ですが、中国語、日本語、韓国語にも対応します。
+選択したデバイスは Ryzen 7 9700X 内蔵 GPU です。ビットレートとプリセットは設定例であり、性能の測定結果ではありません。このページの画像は日本語 UI です。ページの言語を切り替えると、英語、中国語、韓国語の画像を確認できます。
 
 </details>
 
@@ -44,7 +44,7 @@ OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge
 独立した録画設定は変更しません。拡張配信に付属するストリーム保存は配信と同じエンコーダーを使用します。GPU の欠落や非対応の構成は配信開始を中止し、別 GPU へ自動変更しません。[手順・動作・制限 →](enhanced-broadcasting.md)
 
 <p align="center">
-  <img src="../assets/readme/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 の実際の設定画面。拡張配信の GPU 固定を有効にし、Radeon 内蔵 GPU 1 を選択。中国語 UI。">
+  <img src="../assets/readme/screenshots/ja/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 の実際の設定画面。拡張配信の GPU 固定を有効にし、Radeon 内蔵 GPU 1 を選択。日本語 UI。">
 </p>
 
 ## 実際の 2 GPU 環境で確認
@@ -81,7 +81,7 @@ OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge
 <summary>OBS を検出するインストーラーを見る</summary>
 
 <p align="center">
-  <img src="../assets/readme/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge インストーラーが OBS フォルダーを検出し、全ローカル固定ドライブ検索を提供。">
+  <img src="../assets/readme/screenshots/ja/installer-obs-discovery.jpg" width="598" alt="GPU Encoder Bridge インストーラーが OBS フォルダーを検出し、全ローカル固定ドライブ検索を提供。">
 </p>
 
 検出した OBS を一覧表示し、任意の全ドライブ検索と、続行後のルート検証を提供します。画面はインストール前の検出段階です。

@@ -1,6 +1,6 @@
 ; SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef AppVersion
-  #define AppVersion "0.3.0-preview"
+  #define AppVersion "0.3.1"
 #endif
 #ifndef ProjectURL
   #define ProjectURL "https://github.com/1728643928/obs-gpu-encoder"
