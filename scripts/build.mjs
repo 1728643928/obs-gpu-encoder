@@ -18,7 +18,7 @@ for(const d of ['build/lib','build/include','build/tmp','dist/obs-plugins/64bit'
     await fs.mkdir(path.join(root,d),{recursive:true});
 const deps=[
  {name:'zig',folder:'zig-x86_64-windows-0.14.1',url:'https://ziglang.org/download/0.14.1/zig-x86_64-windows-0.14.1.zip',hash:'554f5378228923ffd558eac35e21af020c73789d87afeabf4bfd16f2e6feed2c'},
- {name:'obs',folder:'obs-studio-33.0.0',url:'https://codeload.github.com/obsproject/obs-studio/zip/refs/tags/33.0.0',hash:'bdab14146289f39be6c12d5165812ba5b37b5231f857cb84aa5e4bafeaaa8686'},
+ {name:'obs',folder:'obs-studio-33.0.0',extract:['obs-studio-33.0.0/libobs','obs-studio-33.0.0/frontend/api'],url:'https://codeload.github.com/obsproject/obs-studio/zip/refs/tags/33.0.0',hash:'bdab14146289f39be6c12d5165812ba5b37b5231f857cb84aa5e4bafeaaa8686'},
  {name:'ffmpeg',folder:'FFmpeg-n8.0',url:'https://codeload.github.com/FFmpeg/FFmpeg/zip/refs/tags/n8.0',hash:'775db720f4821967c360b7cecb277540a9eb8d72a9af1cd7c1d2849c4c8c881c'}
 ];
 function run(exe,argv,env=process.env){
@@ -40,7 +40,7 @@ async function download(url,dest,hash){
 for(const dep of deps){
  try{await fs.access(path.join(cache,dep.folder));}
  catch{const archive=path.join(cache,dep.name+'.zip');await download(dep.url,archive,dep.hash);
-       run('tar.exe',['-xf',archive,'-C',cache]);}
+       run('tar.exe',['-xf',archive,'-C',cache,...(dep.extract||[])]);}
 }
 let obsRoot=value('--obs-root',null);
 if(!obsRoot&&args.includes('--download-obs')){
@@ -64,7 +64,7 @@ function peExports(b){
 }
 const zig=path.join(cache,deps[0].folder,'zig.exe');
 const env={...process.env,ZIG_GLOBAL_CACHE_DIR:path.join(cache,'zig-cache'),TEMP:path.join(root,'build/tmp'),TMP:path.join(root,'build/tmp')};
-for(const dll of ['obs.dll','avcodec-62.dll','avutil-60.dll']){
+for(const dll of ['obs.dll','obs-frontend-api.dll','avcodec-62.dll','avutil-60.dll']){
  const exports=peExports(await fs.readFile(path.join(binaries,dll)));
  const def=path.join(root,'build/lib',dll+'.def');
  await fs.writeFile(def,'LIBRARY '+dll+'\nEXPORTS\n'+exports.map(s=>'  '+s).join('\n'));
@@ -74,11 +74,11 @@ const ffmpeg=path.join(cache,deps[2].folder),obs=path.join(cache,deps[1].folder,
 await fs.writeFile(path.join(ffmpeg,'libavutil/avconfig.h'),'#pragma once\n#define AV_HAVE_BIGENDIAN 0\n#define AV_HAVE_FAST_UNALIGNED 1\n');
 await fs.writeFile(path.join(root,'build/include/obsconfig.h'),'#pragma once\n#define OBS_DATA_PATH "data"\n#define OBS_PLUGIN_PATH "obs-plugins"\n#define OBS_PLUGIN_DESTINATION "obs-plugins"\n#define OBS_RELEASE_CANDIDATE 0\n#define OBS_BETA 0\n');
 await fs.writeFile(path.join(root,'build/include/version.hpp'),'#pragma once\n#define GBE_VERSION "'+version+'"\n');
-const common=['c++','-target','x86_64-windows-gnu','-std=c++17','-O2','-g0','-static','-ffile-prefix-map='+root+'=.','-Isrc','-Ibuild/include','-I'+ffmpeg];
+const common=['c++','-target','x86_64-windows-gnu','-std=c++17','-O2','-g0','-static','-ffile-prefix-map='+root+'=.','-Isrc','-Ibuild/include','-I'+ffmpeg,'-I'+path.join(cache,deps[1].folder,'frontend/api')];
 const libraries=['build/lib/avcodec-62.dll.a','build/lib/avutil-60.dll.a','-ld3d11','-ldxgi'];
 run(zig,[...common,'-c','src/backend.cpp','-o','build/backend.obj'],env);
 run(zig,[...common,'-s','build/backend.obj','src/worker.cpp',...libraries,'-o','dist/obs-plugins/64bit/obs-gpu-encoder-worker.exe'],env);
-run(zig,[...common,'-s','-I'+obs,'build/backend.obj','src/plugin.cpp','src/worker-client.cpp','-shared','build/lib/obs.dll.a',...libraries,'-o','dist/obs-plugins/64bit/obs-gpu-encoder.dll'],env);
+run(zig,[...common,'-s','-I'+obs,'build/backend.obj','src/plugin.cpp','src/worker-client.cpp','src/enhanced-output.cpp','src/enhanced-frontend.cpp','-luser32','-shared','build/lib/obs-frontend-api.dll.a','build/lib/obs.dll.a',...libraries,'-o','dist/obs-plugins/64bit/obs-gpu-encoder.dll'],env);
 for(const locale of ['en-US','zh-CN','ja-JP','ko-KR'])
  await fs.copyFile(path.join(root,'data/locale',locale+'.ini'),path.join(output,'data/obs-plugins/obs-gpu-encoder/locale',locale+'.ini'));
 for(const name of ['README.md','LICENSE','THIRD-PARTY.md'])await fs.copyFile(path.join(root,name),path.join(output,name));
@@ -91,5 +91,7 @@ if(args.includes('--tests')){
  run(path.join(root,'build/protocol-test.exe'),[],env);
  run(zig,[...common,'tests/adapter-policy-test.cpp','-o','build/adapter-policy-test.exe'],env);
  run(path.join(root,'build/adapter-policy-test.exe'),[],env);
+ run(zig,[...common,'-s','-I'+obs,'tests/enhanced-output-test.cpp','src/enhanced-output.cpp','build/lib/obs.dll.a','-o','build/enhanced-output-test.exe'],env);
+ run(path.join(root,'build/enhanced-output-test.exe'),[],{...env,PATH:binaries+path.delimiter+env.PATH});
 }
 console.log('Built '+output+'\nNo OBS configuration or installed files were changed.');

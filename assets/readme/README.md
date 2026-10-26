@@ -46,3 +46,7 @@ The OBS screenshots use an isolated portable profile with no account, stream key
 The installer was opened in current-user mode, captured at the discovery step and cancelled. No plugin installation was performed. The full scan button is visible, but the screenshot does not claim a completed scan.
 
 Keep screenshots as real captures when the UI changes. The SVG generator does not create or modify these files. All four README languages share the English screenshots with localized captions and alt text.
+
+## Enhanced-broadcast settings capture
+
+[enhanced-gpu-settings.jpg](enhanced-gpu-settings.jpg) was captured on 2026-10-27 from the actual user installation of OBS Studio 33.0.0 with GPU Encoder Bridge 0.3.0-preview. It shows the Simplified Chinese Tools dialog after saving and reopening the forced iGPU selection. Only the bounded plugin dialog is included; no scene, account, key or platform configuration appears in the asset. The other README languages use translated alt text. This is a configuration example, not proof of public Twitch receiving.

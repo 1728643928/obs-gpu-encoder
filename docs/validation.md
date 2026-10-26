@@ -29,3 +29,17 @@ Adapter-policy regression tests passed, including preserving two real identical-
 - Invalid root and a target file held with an exclusive Win32 handle were rejected before plugin files were copied.
 - The /DIR command-line regression preserves the explicitly selected target rather than replacing it with a detected installation.
 - Interactive installer showed all four language options. Japanese discovery UI detected the real OBS installation, scanned more than 24,000 directories across local fixed drives and stopped on request with navigation re-enabled. This checked start/cancel behavior; it was not an exhaustive completion of every drive. The UI test used the identical wizard script with the privilege requirement lowered for the test copy only.
+
+## 0.3.0 enhanced broadcasting GPU binding
+
+2026-10-27, Windows 11 and the user's OBS Studio 33.0.0 runtime.
+
+- Build, protocol and adapter-policy checks passed. The new graphics-free OBS regression verified three-track replacement, frame-rate preservation without double division, low-bitrate rendition settings, independent recording isolation and shared enhanced-stream dump.
+- Invalid plans are blocked before stream start: unsupported AV1 on an H.264-only test binding, missing saved GPU, 10-bit input, invalid bitrate and simulated backend initialization failure. Original encoder callbacks did not run as a fallback.
+- A separate local hardware harness used the actual OBS D3D11 renderer on RX 9060 XT and three real AMF Bridge encoders on the Ryzen 7 9700X iGPU: 1920×1080 at 60 fps / 6000 Kbps, 1280×720 at 30 fps / 2500 Kbps, and 640×360 at 20 fps / 160 Kbps.
+- In a five-second run, the capturing output received 298, 149 and 99 packets respectively, with strictly increasing timestamps per track. Start logs bound all three workers to PCI 1002:13c0; the original encoder was never initialized. The process exited successfully after cleanup. Packet totals reflect group startup and output shutdown, not a fixed input-frame benchmark.
+- Four-language installer fixture checks passed, including required frontend API dependency, invalid paths, occupied files and retention of unrelated files.
+
+These checks demonstrate local multi-stream routing and encoding. They do not establish successful public Twitch negotiation/receiving, a gaming-performance improvement, or every iGPU's simultaneous-encoding capacity. Account eligibility and platform-returned codecs still apply.
+
+The 0.3.0 plugin was then installed into the user's existing OBS installation. First-use settings with absent profile keys, selecting the iGPU, saving and reopening were verified through the actual UI. The current profile was saved with forced iGPU binding and Twitch Enhanced Broadcasting enabled. No public stream was started for this check.

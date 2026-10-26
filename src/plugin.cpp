@@ -4,6 +4,7 @@
 #include "backend.hpp"
 #include "worker-client.hpp"
 #include "version.hpp"
+#include "enhanced-output.hpp"
 #define NOMINMAX
 #include <windows.h>
 #include <memory>
@@ -169,8 +170,13 @@ bool obs_module_load(void) {
                 definitions.push_back(std::move(d));
             }
         }
+        std::vector<gbe::EnhancedBinding> bindings;
+        for(const auto& d:definitions)bindings.push_back({d->adapter.identity,d->adapter.name,d->id,d->codec.id,d->adapter.index});
+        gbe::start_enhanced_frontend(std::move(bindings));
         return true;
     } catch(const std::exception& e) {blog(LOG_ERROR,"[gpu-encoder] Load failed: %s",e.what());return false;}
       catch(...) {blog(LOG_ERROR,"[gpu-encoder] Load failed");return false;}
 }
 // Definitions deliberately live until DLL unload; OBS may destroy encoders after module_unload.
+
+void obs_module_unload(void) {gbe::stop_enhanced_frontend();}

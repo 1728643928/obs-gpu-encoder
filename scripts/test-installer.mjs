@@ -17,7 +17,7 @@ for(const lang of ['en','zh','ja','ko']){
  await fs.mkdir(path.join(dir,'bin/64bit'),{recursive:true});
  await fs.copyFile(path.join(obs,'bin/64bit/obs64.exe'),path.join(dir,'bin/64bit/obs64.exe'));
  // Version comes from a real OBS executable. DLL placeholders are never loaded.
- for(const dll of ['obs.dll','avcodec-62.dll','avutil-60.dll'])await fs.writeFile(path.join(dir,'bin/64bit',dll),'fixture only');
+ for(const dll of ['obs.dll','obs-frontend-api.dll','avcodec-62.dll','avutil-60.dll'])await fs.writeFile(path.join(dir,'bin/64bit',dll),'fixture only');
  await fs.mkdir(path.join(dir,'obs-plugins/64bit'),{recursive:true});
  const sentinel=path.join(dir,'obs-plugins/64bit/unrelated-plugin.txt');await fs.writeFile(sentinel,'keep');
  const argv=['/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/CURRENTUSER','/LANG='+lang,'/DIR='+dir];

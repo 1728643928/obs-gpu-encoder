@@ -6,9 +6,9 @@
   <img src="../assets/readme/hero-zh-cn.svg" width="100%" alt="GPU Encoder Bridge：游戏与 OBS 渲染继续使用独显，另外指定 AMD 核显或其他 AMD 显卡编码。">
 </p>
 
-**[下载 Windows 安装器 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.2.0-preview/GPU-Encoder-Bridge-0.2.0-preview-windows-x64-setup.exe)** · [全部下载](https://github.com/1728643928/obs-gpu-encoder/releases) · [文档索引](README.md) · [问题反馈](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[下载 Windows 安装器 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [全部下载](https://github.com/1728643928/obs-gpu-encoder/releases) · [文档索引](README.md) · [问题反馈](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.2.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **按真实显卡名选择编码设备，OBS 继续在游戏显卡上运行。**
 
@@ -36,6 +36,16 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 这里选择的是 Ryzen 7 9700X 核显。码率和预设是示例配置，不代表性能测试结果。截图使用英文界面，插件也支持中文、日文和韩文。
 
 </details>
+
+## 增强广播也能指定编码显卡
+
+保留 OBS 的增强广播开启，在 **工具 → GPU Encoder Bridge：增强广播** 中勾选强制绑定、选择核显并保存。设置按 OBS 配置文件分别保存，平台方案生成后会替换全部直播视频轨道，即使原来的编码器下拉框被锁定也能生效。
+
+独立录制的编码选项与设置保持独立；增强广播自带的直播副本跟随直播编码。显卡缺失或方案不兼容时阻止启动，不自动改用其他显卡。[操作步骤、原理与限制 →](enhanced-broadcasting.md)
+
+<p align="center">
+  <img src="../assets/readme/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 实际工具窗口：已勾选强制增强广播编码，并选择 AMD Radeon 核显 GPU 1。">
+</p>
 
 ## 已在真实双显卡环境验证
 
@@ -65,7 +75,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 
 条目示例：**AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**。GPU 编号是当前 DXGI 枚举顺序，硬件变更后请重新检查。
 
-可从 H.264、CBR、关键帧 2 秒、均衡开始设置，码率按平台要求填写。需要固定编码器时，请关闭可能覆盖选择的 Twitch Enhanced Broadcasting。
+可从 H.264、CBR、关键帧 2 秒、均衡开始设置，码率按平台要求填写。使用 Twitch 增强广播时，另在插件的[增强广播设置](enhanced-broadcasting.md)中指定编码显卡。
 
 <details>
 <summary>查看安装器如何查找 OBS</summary>

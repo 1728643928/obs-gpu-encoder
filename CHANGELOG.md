@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 0.3.0-preview
+
+- Add per-profile Enhanced Broadcasting GPU selection through the Tools menu.
+- Bind every prepared video track before initialization; preserve rendition settings, synchronization and the shared enhanced-stream dump while keeping independent recording unchanged.
+- Block missing/unsupported GPUs and initialization failures without alternate-GPU fallback.
+- Add real-OBS routing regressions and a simultaneous three-track iGPU hardware harness.
+- Validate the frontend API dependency during installation and fix Windows source-header extraction.
+
 - Credit implementation references, dependencies, reused installer translation and README design guidance on all four homepages; document exact sources and future attribution rules.
 
 - Add real OBS GPU/codec selection, iGPU settings and installer-discovery screenshots with four-language captions.
@@ -11,7 +19,7 @@
 - Add file-by-file guides for native source, installer, scripts, tests, locale resources, CI and third-party notices.
 - Add repository maps to the English, Chinese, Japanese and Korean getting-started guides.
 - Add module navigation and contribution/handover entry points.
-- This documentation update does not change encoder behavior, installer behavior, version number or existing release assets.
+- Earlier documentation-only commits left the 0.2.0 release assets unchanged.
 
 ## 0.2.0-preview
 

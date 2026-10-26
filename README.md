@@ -6,9 +6,9 @@
   <img src="assets/readme/hero-en.svg" width="100%" alt="GPU Encoder Bridge for OBS: keep the game and OBS rendering on your gaming GPU, and choose an AMD GPU for encoding.">
 </p>
 
-**[Download the Windows installer →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.2.0-preview/GPU-Encoder-Bridge-0.2.0-preview-windows-x64-setup.exe)** · [All downloads](https://github.com/1728643928/obs-gpu-encoder/releases) · [Documentation](docs/README.md) · [Report a bug](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Download the Windows installer →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [All downloads](https://github.com/1728643928/obs-gpu-encoder/releases) · [Documentation](docs/README.md) · [Report a bug](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.2.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **Choose the encoding GPU by its actual name. Keep OBS on your gaming GPU.**
 
@@ -36,6 +36,16 @@ This real 0.2.0-preview capture shows two GPUs and their available formats. **AM
 The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are example values, not a performance result. Screenshots use the English UI; the plugin also provides Chinese, Japanese and Korean.
 
 </details>
+
+## Enhanced Broadcasting
+
+**Keep Enhanced Broadcasting enabled and choose its encoding GPU separately.** In **Tools → GPU Encoder Bridge: Enhanced Broadcasting**, enable GPU binding, select your iGPU and save. This profile-specific setting replaces every live video track after OBS negotiates the plan, even when its usual encoder dropdown is locked.
+
+Independent recording choices stay unchanged. OBS's own enhanced-stream dump follows the live encoders. Missing GPUs and incompatible plans block startup instead of falling back to another GPU. [Setup, behavior and limits →](docs/enhanced-broadcasting.md)
+
+<p align="center">
+  <img src="assets/readme/enhanced-gpu-settings.jpg" width="632" alt="Actual 0.3.0 Tools dialog with forced Enhanced Broadcasting encoding enabled and AMD Radeon integrated graphics GPU 1 selected. Chinese interface shown.">
+</p>
 
 ## Verified on a real two-GPU setup
 
@@ -65,7 +75,7 @@ These are scoped validation results, not gaming benchmarks. HEVC/AV1 have capabi
 
 A typical entry is **AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**. GPU numbers reflect the current DXGI order; recheck the selection after hardware changes.
 
-For an initial configuration, the plugin provides H.264, CBR, 2-second keyframes and Balanced. Set bitrate to your platform's requirements. Disable Twitch Enhanced Broadcasting if it would override your chosen encoder.
+For an initial configuration, the plugin provides H.264, CBR, 2-second keyframes and Balanced. Set bitrate to your platform's requirements. For Twitch Enhanced Broadcasting, also configure the plugin's [enhanced-broadcast GPU setting](docs/enhanced-broadcasting.md).
 
 <details>
 <summary>See the installer find OBS</summary>

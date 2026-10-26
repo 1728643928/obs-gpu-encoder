@@ -12,7 +12,7 @@ for(const lang of languages){
  assert.equal(entries.length,new Set(entries).size,'Duplicate translation keys');
  const keys=entries.sort();if(!baseline)baseline=keys;else assert.deepEqual(keys,baseline,'Missing '+lang+' keys');
 }
-const source=await fs.readFile(path.join(root,'src/plugin.cpp'),'utf8');
+const source=(await Promise.all((await fs.readdir(path.join(root,'src'))).filter(f=>/\.(?:cpp|hpp)$/.test(f)).map(f=>fs.readFile(path.join(root,'src',f),'utf8')))).join('\n');
 for(const [,key] of source.matchAll(/obs_module_text\("([^"]+)"\)/g))assert(baseline.includes(key),'Untranslated plugin key '+key);
 const messages=await fs.readFile(path.join(root,'installer/messages.iss'),'utf8');
 let installerBaseline;

@@ -1,6 +1,6 @@
 ; SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef AppVersion
-  #define AppVersion "0.2.0-preview"
+  #define AppVersion "0.3.0-preview"
 #endif
 #ifndef ProjectURL
   #define ProjectURL "https://github.com/1728643928/obs-gpu-encoder"
@@ -99,6 +99,7 @@ begin
   if not IsOBSRoot(Root) then Exit;
   if not GetVersionNumbers(AddBackslash(Root) + 'bin\64bit\obs64.exe', MS, LS) then Exit;
   Result := ((MS shr 16) = 33) and
+    FileExists(AddBackslash(Root) + 'bin\64bit\obs-frontend-api.dll') and
     FileExists(AddBackslash(Root) + 'bin\64bit\avcodec-62.dll') and
     FileExists(AddBackslash(Root) + 'bin\64bit\avutil-60.dll');
 end;

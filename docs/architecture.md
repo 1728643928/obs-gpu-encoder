@@ -12,7 +12,7 @@ The worker isolates AMF initialization and driver state from OBS and other plugi
 
 ## Boundaries
 
-- No platform endpoints, passwords, stream keys or OBS profile files are read by the plugin.
+- No platform endpoints, passwords or stream keys are read by the plugin. The frontend extension accesses its own per-profile GPU preferences and OBS's enhanced-broadcast enable flag through public APIs.
 - No network listener or network publishing code exists in the worker.
 - The named pipe rejects remote clients. A preconnected client handle is inherited through an explicit handle allowlist.
 - IPC validates magic, lengths, operation kind, packet counts, frame sizes and device identity.
@@ -27,3 +27,7 @@ The worker isolates AMF initialization and driver state from OBS and other plugi
 backend.hpp separates adapter discovery, codec descriptions, settings and encoded packets. Additional vendor backends should keep explicit device binding and capability tests. Avoid presenting all codecs solely from vendor/model names. New settings require matching worker protocol validation and OBS properties/defaults.
 
 protocol.hpp is a private versioned Windows-x64 wire format. Change its magic/version when changing incompatible layouts. Worker and plugin must come from the same release.
+
+## Enhanced broadcasting
+
+The optional per-profile binding uses OBS's public frontend pre-start event after enhanced negotiation. It replaces the prepared video encoders before initialization, preserves rendition metadata and attaches a synchronized group. Invalid plans are blocked with an internal failure guard. Independent recording is untouched; OBS's own shared multitrack stream dump follows live replacements. See [enhanced broadcasting](enhanced-broadcasting.md) for scope and limitations.

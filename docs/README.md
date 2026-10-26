@@ -6,6 +6,7 @@ Choose an entry by the task you are trying to complete.
 | --- | --- |
 | [Main README](../README.md) | English overview, installation, current scope and source map. / 英文概览与项目导航。 |
 | [简体中文](README.zh-CN.md) · [日本語](README.ja-JP.md) · [한국어](README.ko-KR.md) | Translated getting-started guides. / 中日韩入门指南。 |
+| [enhanced-broadcasting.md](enhanced-broadcasting.md) | Tools GPU selection, multitrack routing, recording independence and limits. / 增强广播选卡、录制独立性与限制。 |
 | [architecture.md](architecture.md) | OBS integration, explicit GPU binding and worker/IPC boundaries. / 编码架构与进程边界。 |
 | [installer.md](installer.md) | Disk discovery, exact destinations, validation and uninstall design. / 安装器扫描、目标路径及卸载设计。 |
 | [testing.md](testing.md) | Commands and expected checks for contributors. / 测试执行方式。 |

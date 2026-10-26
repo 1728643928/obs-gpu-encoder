@@ -113,7 +113,7 @@ bool Encoder::open(const Adapter& adapter,const Codec& codec,const Settings& set
     if(adapter.vendor!=0x1002) {error="This preview implements AMD AMF only";return false;}
     if(settings.width<64||settings.height<64||settings.width>8192||settings.height>8192||
        settings.width%2||settings.height%2||settings.fps_num<=0||settings.fps_den<=0||
-       settings.bitrate<250||settings.bitrate>200000||settings.keyint<1||settings.keyint>20) {
+       settings.bitrate<1||settings.bitrate>200000||settings.keyint<1||settings.keyint>20) {
         error="Invalid dimensions, frame rate, bitrate or keyframe interval";return false;
     }
     adapter_=adapter;settings_=settings;

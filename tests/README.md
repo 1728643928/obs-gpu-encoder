@@ -4,11 +4,12 @@
 | --- | --- | --- |
 | [protocol-test.cpp](protocol-test.cpp) | Settings/UTF-8 roundtrips and malformed/oversized/truncated message rejection. / 协议往返和异常消息边界。 | No |
 | [adapter-policy-test.cpp](adapter-policy-test.cpp) | Physical/iGPU retention, indirect/software rejection, unavailable-query behavior and identical-model real cards. / 显卡筛选策略。 | No |
+| [enhanced-output-test.cpp](enhanced-output-test.cpp) | Real-OBS plan replacement, frame rates, recording isolation and blocked fallback; optional rendered three-track hardware mode. / 增强广播接管回归及可选三路实机编码。 | No by default; AMD for hardware mode |
 | [backend-smoke.cpp](backend-smoke.cpp) | Direct backend capabilities and encoding behavior. / 直接调用后端的能力及编码测试。 | Yes, AMD |
 | [worker-smoke.cpp](worker-smoke.cpp) | Actual worker path: 300 frames, packet/timestamp/keyframe checks and changed-LUID rejection. / 独立进程完整编码链路与设备身份拒绝。 | Yes, AMD |
 | [lockfile.cpp](lockfile.cpp) | Holds a fixture file with an exclusive Win32 handle so installer refusal can be tested. / 为安装器占用保护提供文件锁。 | No |
 
-**node scripts/build.mjs --download-obs --tests** builds the harnesses and runs CPU-only protocol/adapter tests. Hardware smoke tests are run explicitly on an appropriate machine; hosted CI success alone does not prove hardware encoding or game performance.
+**node scripts/build.mjs --download-obs --tests** builds the harnesses and runs CPU-only protocol, adapter and enhanced-routing tests. Hardware smoke tests are run explicitly on an appropriate machine; hosted CI success alone does not prove hardware encoding or game performance.
 
 The JavaScript [installer test](../scripts/test-installer.mjs) uses the lock helper and disposable OBS-layout fixtures. Fixture DLL placeholders are never loaded. Installation tests do not replace an OBS runtime test.
 

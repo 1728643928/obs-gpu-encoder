@@ -6,9 +6,9 @@
   <img src="../assets/readme/hero-ja.svg" width="100%" alt="GPU Encoder Bridge：ゲームと OBS の描画用 GPU は維持し、エンコード用 AMD GPU を別に選択できます。">
 </p>
 
-**[Windows インストーラーをダウンロード →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.2.0-preview/GPU-Encoder-Bridge-0.2.0-preview-windows-x64-setup.exe)** · [すべての配布物](https://github.com/1728643928/obs-gpu-encoder/releases) · [ドキュメント](README.md) · [不具合報告](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Windows インストーラーをダウンロード →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [すべての配布物](https://github.com/1728643928/obs-gpu-encoder/releases) · [ドキュメント](README.md) · [不具合報告](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.2.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **エンコード用 GPU を実際の名前で選択。OBS はゲーム用 GPU のまま。**
 
@@ -36,6 +36,16 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
 選択したデバイスは Ryzen 7 9700X 内蔵 GPU です。ビットレートとプリセットは設定例であり、性能の測定結果ではありません。画面は英語ですが、中国語、日本語、韓国語にも対応します。
 
 </details>
+
+## 拡張配信でも GPU を指定
+
+OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge：拡張配信**で GPU 固定を有効にし、内蔵 GPU を選択して保存します。プロファイルごとの設定で、サービスの構成取得後に全配信映像トラックを置き換えます。通常のエンコーダー選択欄が無効でも機能します。
+
+独立した録画設定は変更しません。拡張配信に付属するストリーム保存は配信と同じエンコーダーを使用します。GPU の欠落や非対応の構成は配信開始を中止し、別 GPU へ自動変更しません。[手順・動作・制限 →](enhanced-broadcasting.md)
+
+<p align="center">
+  <img src="../assets/readme/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 の実際の設定画面。拡張配信の GPU 固定を有効にし、Radeon 内蔵 GPU 1 を選択。中国語 UI。">
+</p>
 
 ## 実際の 2 GPU 環境で確認
 
@@ -65,7 +75,7 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
 
 表示例：**AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**。GPU 番号は現在の DXGI 列挙順です。ハードウェア変更後は再確認してください。
 
-最初の設定には H.264、CBR、キーフレーム 2 秒、バランスを利用できます。ビットレートはサービスの要件に合わせてください。選択したエンコーダーを上書きする場合は Twitch Enhanced Broadcasting を無効にしてください。
+最初の設定には H.264、CBR、キーフレーム 2 秒、バランスを利用できます。ビットレートはサービスの要件に合わせてください。Twitch の拡張配信では、プラグインの[拡張配信 GPU 設定](enhanced-broadcasting.md)も設定してください。
 
 <details>
 <summary>OBS を検出するインストーラーを見る</summary>

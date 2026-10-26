@@ -6,9 +6,9 @@
   <img src="../assets/readme/hero-ko.svg" width="100%" alt="GPU Encoder Bridge: 게임과 OBS 렌더링은 게임용 GPU에 두고 인코딩할 AMD GPU를 따로 선택합니다.">
 </p>
 
-**[Windows 설치 프로그램 다운로드 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.2.0-preview/GPU-Encoder-Bridge-0.2.0-preview-windows-x64-setup.exe)** · [모든 다운로드](https://github.com/1728643928/obs-gpu-encoder/releases) · [문서](README.md) · [버그 신고](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Windows 설치 프로그램 다운로드 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.0-preview/GPU-Encoder-Bridge-0.3.0-preview-windows-x64-setup.exe)** · [모든 다운로드](https://github.com/1728643928/obs-gpu-encoder/releases) · [문서](README.md) · [버그 신고](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.2.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.0-preview** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **실제 GPU 이름으로 인코딩 장치를 선택하세요. OBS는 게임 GPU에서 계속 실행됩니다.**
 
@@ -36,6 +36,16 @@ GPU Encoder Bridge는 GPU 이름이 표시되는 기본 인코더를 OBS에 추�
 선택한 장치는 Ryzen 7 9700X 내장 GPU입니다. 비트레이트와 프리셋은 설정 예시이며 성능 측정 결과가 아닙니다. 화면은 영어이며 플러그인은 중국어, 일본어와 한국어도 지원합니다.
 
 </details>
+
+## 향상된 방송에서도 GPU 지정
+
+OBS의 향상된 방송을 켠 상태에서 **도구 → GPU Encoder Bridge: 향상된 방송**을 열고 GPU 고정을 활성화한 뒤 내장 GPU를 선택하여 저장하세요. 프로필별 설정이며 서비스가 구성을 반환한 후 모든 방송 영상 트랙을 교체합니다. 기존 인코더 선택 상자가 잠겨 있어도 적용됩니다.
+
+독립 녹화 설정은 변경하지 않습니다. 향상된 방송의 스트림 사본 저장은 방송 인코더를 공유합니다. GPU가 없거나 구성이 호환되지 않으면 시작을 차단하고 다른 GPU로 자동 전환하지 않습니다. [설정·동작·제한 →](enhanced-broadcasting.md)
+
+<p align="center">
+  <img src="../assets/readme/enhanced-gpu-settings.jpg" width="632" alt="0.3.0 실제 설정 창에서 향상된 방송 GPU 고정을 켜고 Radeon 내장 GPU 1을 선택한 모습. 중국어 UI.">
+</p>
 
 ## 실제 두 GPU 환경에서 검증
 
@@ -65,7 +75,7 @@ GPU Encoder Bridge는 GPU 이름이 표시되는 기본 인코더를 OBS에 추�
 
 표시 예: **AMD Radeon(TM) Graphics — H.264 [GPU 1 / AMF Bridge]**. GPU 번호는 현재 DXGI 열거 순서이므로 하드웨어 변경 후 다시 확인하세요.
 
-시작 설정으로 H.264, CBR, 키프레임 2초, 균형을 사용할 수 있습니다. 비트레이트는 서비스 요구에 맞추세요. 인코더 선택을 덮어쓰는 경우 Twitch Enhanced Broadcasting을 끄세요.
+시작 설정으로 H.264, CBR, 키프레임 2초, 균형을 사용할 수 있습니다. 비트레이트는 서비스 요구에 맞추세요. Twitch 향상된 방송에서는 플러그인의 [향상된 방송 GPU 설정](enhanced-broadcasting.md)도 지정하세요.
 
 <details>
 <summary>OBS를 찾는 설치 프로그램 보기</summary>
