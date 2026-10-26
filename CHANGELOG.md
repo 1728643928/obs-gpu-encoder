@@ -2,9 +2,11 @@
 
 ## Unreleased
 
+- Redesign the four-language README with original GPU-role artwork, direct installer links and clearly scoped validation results.
+
 - Add file-by-file guides for native source, installer, scripts, tests, locale resources, CI and third-party notices.
 - Add repository maps to the English, Chinese, Japanese and Korean getting-started guides.
-- Explain GitHub's last-commit column and contribution/handover entry points.
+- Add module navigation and contribution/handover entry points.
 - This documentation update does not change encoder behavior, installer behavior, version number or existing release assets.
 
 ## 0.2.0-preview

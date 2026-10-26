@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="448" viewBox="0 0 1200 448" role="img" aria-labelledby="title desc">
+  <title id="title">GPU Encoder Bridge for OBS</title>
+  <desc id="desc">GPU の役割を示す概念図。ゲームと OBS プレビューは描画 GPU に残し、指定した AMD GPU でエンコードします。フレームはシステムメモリを経由し、OBS が配信と音声を担当します。</desc>
+  <rect width="1200" height="448" rx="20" fill="#12191f"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, &apos;Microsoft YaHei&apos;, &apos;Yu Gothic&apos;, &apos;Malgun Gothic&apos;, sans-serif">
+  <text x="56" y="53" font-size="20" fill="#a8b4be" letter-spacing="1.4">OBS STUDIO / WINDOWS x64</text>
+  <text x="1144" y="53" font-size="20" fill="#a8b4be" text-anchor="end" letter-spacing="1.4">AMD AMF</text>
+  <text x="56" y="137" font-size="66" fill="#f5f3ee" font-weight="700" letter-spacing="-1.7">GPU Encoder Bridge</text>
+  <text x="56" y="185" font-size="26" fill="#c2ccd3" >ゲーム用 GPU はそのまま。エンコード用 GPU を選べます。</text>
+  <path d="M56 222H1144" stroke="#35424d"/>
+  <g id="render-role">
+  <text x="56" y="264" font-size="20" fill="#ff9d83" font-weight="600" letter-spacing="1">01 / 描画</text>
+  <text x="56" y="313" font-size="31" fill="#f5f3ee" font-weight="600">ゲームと OBS プレビュー</text>
+  <text x="56" y="352" font-size="23" fill="#a8b4be" >ゲーム用 GPU で描画</text>
+  </g>
+  <path d="M558 305H622M610 293L622 305L610 317" fill="none" stroke="#91d6ba" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g id="encoding-role">
+  <text x="660" y="264" font-size="20" fill="#91d6ba" font-weight="600" letter-spacing="1">02 / エンコード</text>
+  <text x="660" y="313" font-size="34" fill="#f5f3ee" font-weight="600">指定した AMD GPU</text>
+  <text x="660" y="352" font-size="23" fill="#a8b4be" >内蔵 GPU または別の AMD GPU</text>
+  </g>
+  <path d="M56 383H1144" stroke="#35424d"/>
+  <text x="56" y="418" font-size="21" fill="#c2ccd3" >配信操作と音声処理は引き続き OBS が担当。</text>
+  </g>
+</svg>
