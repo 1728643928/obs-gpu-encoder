@@ -115,9 +115,24 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 
 内部隐藏进程隔离 AMF 初始化、明确绑定编码显卡，再将编码数据返回 OBS。跨卡传输有成本，不保证游戏性能提升。其他显卡、其他 OBS ABI 和公网平台仍需更多验证。[架构](architecture.md) · [测试](testing.md)
 
+## 致谢与借鉴来源
+
+本项目使用或参考了以下开源成果，并明确列出各自涉及的范围。
+
+| 项目 | 使用或借鉴的内容 |
+| --- | --- |
+| [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | 使用编码器接口与头文件，开发时参考了其 AMF 实现；渲染、音频与推流仍由 OBS 完成。 |
+| [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | 通过 OBS 提供的 libavcodec/libavutil DLL 使用其实际 AMF 编码实现与 D3D11 硬件上下文接口。 |
+| [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | 使用显卡驱动提供的硬件编码运行时；选卡与验证参考了 AMD 官方 FFmpeg/AMF 指南。 |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | 使用 EXE 安装引擎及标准界面翻译；简体中文文件直接沿用上游原文件，作者署名为 [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation)。 |
+| [Zig](https://github.com/ziglang/zig/tree/0.14.1) 及其附带的 LLVM/MinGW 工具链 | 用于编译、链接、Windows 头文件及链接进程序的 C/C++ 运行时组件。 |
+| [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | 参考其 README 内容组织与视觉设计指导；显卡分工 SVG 和生成脚本为本仓库制作。 |
+
+[查看具体参考位置、直接沿用文件与许可证声明 →](../THIRD-PARTY.md)
+
 ## 完整开源，可以继续维护
 
-插件、编码进程、安装器、翻译、测试与发版工作流均按 **GPL-2.0-or-later** 公开，保留第三方声明。没有闭源收费组件、CLA、遥测或在线激活。
+本项目编写的插件、编码进程、安装逻辑、翻译、测试与发版工作流按 **GPL-2.0-or-later** 公开；沿用的第三方组件与文件保留各自上游许可证及声明。没有闭源收费组件、CLA、遥测或在线激活。
 
 任何人可 Fork、创建分支、修改并按许可证再发布。Fork 可用自己仓库的 GitHub Actions 临时令牌发布自己的 Releases，无需原作者私钥或电脑。向原仓库发版仍需所有者授予权限。
 

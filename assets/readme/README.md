@@ -27,6 +27,10 @@ Original artwork and generator are covered by the project's GPL-2.0-or-later lic
 
 한국어: 생성 스크립트의 번역을 수정한 뒤 다시 실행하세요. 이미지는 역할 개념도이며 실제 UI 화면이나 성능 비교가 아닙니다.
 
+## Design reference
+
+The README redesign used [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) as guidance for content hierarchy, a project-specific visual identity, accessible SVGs and desktop/mobile review. The GPU-role artwork and generator were created for this repository. [THIRD-PARTY.md](../../THIRD-PARTY.md#readme-design-reference) records the reference snapshot and scope.
+
 ## Real product screenshots
 
 Captured on 2026-10-26 with Windows 11, OBS Studio 33.0.0 and the published GPU Encoder Bridge 0.2.0-preview binaries. These JPEGs are bounded native UI captures, not generated interface mockups.

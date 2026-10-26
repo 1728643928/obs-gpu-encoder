@@ -115,9 +115,24 @@ ZIP의 **obs-plugins**와 **data** 폴더를 OBS 루트에 합칩니다. 플러�
 
 숨겨진 작업 프로세스가 AMF 초기화를 격리하고 선택한 GPU를 명시적으로 사용하며 인코딩 패킷을 OBS에 돌려줍니다. 전송 비용이 있으므로 게임 성능 향상을 보장하지 않습니다. 다른 GPU, OBS ABI 및 공개 방송 서비스는 추가 검증이 필요합니다. [구조](architecture.md) · [테스트](testing.md)
 
+## 감사 및 참고 출처
+
+이 프로젝트에서 사용하거나 참고한 작업과 각각의 범위를 명시합니다.
+
+| 프로젝트 | 사용하거나 참고한 내용 |
+| --- | --- |
+| [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | 인코더 API와 헤더를 사용하고 개발 중 AMF 구현을 참고했습니다. 렌더링, 오디오와 방송 송출은 OBS가 담당합니다. |
+| [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | OBS가 제공하는 libavcodec/libavutil DLL을 통해 실제 AMF 인코더 구현과 D3D11 하드웨어 컨텍스트 API를 사용합니다. |
+| [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | 드라이버가 제공하는 하드웨어 인코딩 런타임을 사용합니다. GPU 선택과 검증은 AMD의 FFmpeg/AMF 가이드를 참고했습니다. |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE 엔진과 표준 UI 번역을 사용합니다. 중국어 간체 파일은 상위 프로젝트의 원본을 그대로 사용하며 [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation)의 저자 표시를 유지합니다. |
+| [Zig](https://github.com/ziglang/zig/tree/0.14.1) 및 포함된 LLVM/MinGW 도구체인 | 컴파일러, 링커, Windows 헤더와 링크되는 C/C++ 런타임 구성 요소를 사용합니다. |
+| [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | README 구성과 시각 디자인 지침을 참고했습니다. GPU 역할 SVG와 생성 스크립트는 이 저장소를 위해 제작했습니다. |
+
+[구체적인 참고 위치, 재사용 파일 및 라이선스 고지 →](../THIRD-PARTY.md)
+
 ## 완전한 공개 소스로 계속 개발
 
-플러그인, 작업 프로세스, 설치 프로그램, 번역, 테스트 및 릴리스 워크플로를 **GPL-2.0-or-later**로 공개하며 제삼자 고지를 유지합니다. 비공개 유료 구성 요소, CLA, 원격 측정 및 온라인 활성화가 없습니다.
+이 프로젝트에서 작성한 플러그인, 작업 프로세스, 설치 로직, 번역, 테스트 및 릴리스 워크플로를 **GPL-2.0-or-later**로 공개합니다. 재사용한 제삼자 구성 요소와 파일은 각 상위 프로젝트의 라이선스와 고지를 유지합니다. 비공개 유료 구성 요소, CLA, 원격 측정 및 온라인 활성화가 없습니다.
 
 라이선스에 따라 Fork, 분기 생성, 수정과 재배포가 가능합니다. Fork는 자신의 GitHub Actions 토큰으로 자체 Releases를 게시할 수 있으며 원 유지보수자의 비밀이나 PC가 필요 없습니다. 원본 저장소 게시 권한은 소유자가 부여합니다.
 

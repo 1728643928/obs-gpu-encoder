@@ -115,9 +115,24 @@ ZIP 内の **obs-plugins** と **data** を OBS ルートに統合します。�
 
 非表示のワーカーが AMF 初期化を分離し、指定 GPU を明示的に使用して、圧縮済みパケットを OBS に返します。転送コストがあるため、ゲーム性能の向上は保証しません。他の GPU、OBS ABI、公開配信サービスには追加検証が必要です。[構成](architecture.md) · [テスト](testing.md)
 
+## 謝辞と参照元
+
+本プロジェクトで利用・参照した成果と、その範囲を示します。
+
+| プロジェクト | 利用・参照した内容 |
+| --- | --- |
+| [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | エンコーダー API とヘッダーを利用し、AMF 実装を開発時に参照しました。描画・音声・配信は OBS が担当します。 |
+| [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | OBS 付属の libavcodec/libavutil DLL を通じて、AMF エンコーダー実装と D3D11 ハードウェアコンテキスト API を利用します。 |
+| [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | ドライバー提供のハードウェアエンコード機能を利用します。GPU 選択と検証には AMD の FFmpeg/AMF ガイドを参照しました。 |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE エンジンと標準 UI の翻訳を利用します。簡体字中国語ファイルは上流から変更せず使用し、[Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation) の著作者表示を保持しています。 |
+| [Zig](https://github.com/ziglang/zig/tree/0.14.1) と同梱 LLVM/MinGW ツールチェーン | コンパイラー、リンカー、Windows ヘッダー、リンクされる C/C++ ランタイムを利用します。 |
+| [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | README の構成とビジュアル設計の指針を参照しました。GPU の役割を示す SVG と生成スクリプトは本リポジトリ向けに制作しました。 |
+
+[具体的な参照箇所・再利用ファイル・ライセンス表示 →](../THIRD-PARTY.md)
+
 ## 完全な公開ソースから継続開発
 
-プラグイン、ワーカー、インストーラー、翻訳、テスト、公開ワークフローを **GPL-2.0-or-later** で提供し、第三者表示を保持します。非公開の有料部品、CLA、テレメトリー、オンライン認証はありません。
+本プロジェクトで作成したプラグイン、ワーカー、導入ロジック、翻訳、テスト、公開ワークフローを **GPL-2.0-or-later** で提供します。再利用した第三者の部品とファイルは、上流のライセンスと表示を保持します。非公開の有料部品、CLA、テレメトリー、オンライン認証はありません。
 
 ライセンスに従って Fork、ブランチ作成、変更、再配布ができます。Fork は自分のリポジトリの GitHub Actions トークンで独自 Releases を公開でき、元保守者の秘密や PC は不要です。上流の公開権限は所有者が付与します。
 

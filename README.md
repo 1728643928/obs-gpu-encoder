@@ -115,9 +115,24 @@ To uninstall, close OBS and use GPU Encoder Bridge in Windows Installed Apps, or
 
 The hidden worker isolates AMF initialization and binds the selected GPU explicitly; encoded packets return to OBS. This transfer has a cost, so a game-performance improvement is not guaranteed. Other GPUs, other OBS ABI versions and public streaming services need further validation. [Architecture](docs/architecture.md) · [Testing](docs/testing.md)
 
+## Acknowledgements and sources
+
+This project builds on the following work. The scope of each reference or reused component is listed explicitly.
+
+| Project | What it contributes here |
+| --- | --- |
+| [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | Encoder API and headers; its AMF implementation was an implementation reference. OBS supplies rendering, audio and stream publishing. |
+| [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | The actual AMF codec implementations and D3D11 hardware-context APIs, used through OBS-provided libavcodec/libavutil DLLs. |
+| [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | Driver-provided hardware encoding runtime; AMD's FFmpeg/AMF guide informed device selection and validation. |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE installer engine and standard UI translations. The Simplified Chinese file is reused unchanged from upstream and credits [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation). |
+| [Zig](https://github.com/ziglang/zig/tree/0.14.1) and its bundled LLVM/MinGW toolchain | Compiler, linker, Windows headers and linked C/C++ runtime components. |
+| [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | README structure and visual-design guidance. The GPU-role SVGs and their generator were created for this repository. |
+
+[Detailed references, reused files and license notices →](THIRD-PARTY.md)
+
 ## Open source, ready to continue
 
-The plugin, worker, installer, translations, tests and release workflow are all available under **GPL-2.0-or-later**, with third-party notices retained. There is no closed paid component, CLA, telemetry or online activation.
+Project-authored plugin, worker, installer logic, translations, tests and release workflow are available under **GPL-2.0-or-later**. Reused components and files retain their upstream licenses and notices. There is no closed paid component, CLA, telemetry or online activation.
 
 Fork, create branches, modify and redistribute under the license. Forks can publish their own Releases using their own GitHub Actions token, without the original maintainer's secrets or machine. Upstream release access is granted by the repository owner.
 
