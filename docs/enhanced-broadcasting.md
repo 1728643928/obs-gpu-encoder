@@ -2,6 +2,27 @@
 
 Available in **0.3.0-preview**, on Windows x64 with OBS Studio 33.x.
 
+## Platform scope
+
+**Enhanced Broadcasting is not exclusive to Twitch.** OBS calls the underlying mode **Multitrack Video**: the platform negotiates a plan, and the broadcaster can encode multiple qualities for that one service. The on-screen name varies by service. This is different from sending separate outputs to several streaming platforms.
+
+The following integrations are declared in the [official OBS 33.0.0 service table](https://github.com/obsproject/obs-studio/blob/33.0.0/plugins/rtmp-services/data/services.json), checked on 2026-10-27:
+
+| Service | OBS 33 integration |
+| --- | --- |
+| Twitch | A multitrack configuration endpoint with the name **Enhanced Broadcasting**. |
+| Amazon IVS | A multitrack configuration endpoint; the IVS channel must allow multitrack input. |
+| Whowatch (ふわっち) | A multitrack configuration endpoint is declared. |
+| PandaTV (팬더티비) | A multitrack configuration endpoint and service-specific display name are declared. |
+| Dolby OptiView Real-time (formerly Dolby Millicast) | A multitrack configuration endpoint with the name **Enhanced Broadcasting**. |
+| YouTube | No multitrack configuration endpoint is declared for the YouTube service entries. Use the ordinary GPU-named encoder selection. |
+
+This table describes upstream configuration, not account eligibility or successful end-to-end receiving with GPU Encoder Bridge. The plugin uses OBS's prepared multitrack output rather than a hard-coded Twitch service name. Its local routing and three-track iGPU H.264 tests have passed; public Twitch receiving and the other listed services have not been validated. Do not infer tested compatibility merely because OBS lists an integration.
+
+YouTube normally receives the encoded contribution stream and creates viewer quality variants on its servers. Supporting H.264, HEVC or AV1 ingest is a separate capability; it does not mean a service supports OBS's negotiated multitrack mode. This plugin does not add that mode to YouTube. For normal YouTube streaming, choose the GPU-named **AMF Bridge** encoder under **Settings → Output → Advanced → Streaming**.
+
+Platform references: [Twitch](https://help.twitch.tv/s/article/multiple-encodes), [Amazon IVS](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started-set-up-streaming.html), [Dolby OptiView](https://optiview.dolby.com/docs/millicast/obs-enhanced-broadcasting-multitrack-video/) and [YouTube encoder/transcoding guidance](https://support.google.com/youtube/answer/2853702?hl=en). Service integration, account requirements and names can change independently of this plugin.
+
 ## Use your selected GPU
 
 1. Stop streaming and open **Tools → GPU Encoder Bridge: Enhanced Broadcasting**.

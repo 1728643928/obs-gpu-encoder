@@ -39,6 +39,8 @@ GPU Encoder Bridge는 GPU 이름이 표시되는 기본 인코더를 OBS에 추�
 
 ## 향상된 방송에서도 GPU 지정
 
+**서비스 범위:** OBS의 **Multitrack Video** 모드를 Twitch에서는 **Enhanced Broadcasting**이라고 부릅니다. OBS 33에는 Amazon IVS, Whowatch, PandaTV, Dolby OptiView Real-time 연결 설정도 있지만 사용 가능 여부는 서비스와 계정에 따라 다릅니다. **YouTube는 이 OBS 모드를 사용하지 않습니다.** 일반 출력 설정에서 GPU 이름이 붙은 AMF Bridge 인코더를 선택하세요. H.264/HEVC/AV1 지원은 별도 조건입니다. OBS의 연결 설정이 이 플러그인의 플랫폼별 수신 검증을 의미하지는 않습니다. [서비스 범위 상세](enhanced-broadcasting.md#platform-scope)
+
 OBS의 향상된 방송을 켠 상태에서 **도구 → GPU Encoder Bridge: 향상된 방송**을 열고 GPU 고정을 활성화한 뒤 내장 GPU를 선택하여 저장하세요. 프로필별 설정이며 서비스가 구성을 반환한 후 모든 방송 영상 트랙을 교체합니다. 기존 인코더 선택 상자가 잠겨 있어도 적용됩니다.
 
 독립 녹화 설정은 변경하지 않습니다. 향상된 방송의 스트림 사본 저장은 방송 인코더를 공유합니다. GPU가 없거나 구성이 호환되지 않으면 시작을 차단하고 다른 GPU로 자동 전환하지 않습니다. [설정·동작·제한 →](enhanced-broadcasting.md)

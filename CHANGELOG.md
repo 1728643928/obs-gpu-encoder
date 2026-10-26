@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Clarify platform-specific Enhanced Broadcasting / Multitrack Video integration on all four homepages and in the guide; distinguish YouTube's ordinary ingest/server transcoding and upstream integration from plugin end-to-end validation.
+
 ## 0.3.1
 
 - Replace shared screenshots with 16 native captures matching all four README languages.

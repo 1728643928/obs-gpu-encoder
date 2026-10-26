@@ -39,6 +39,8 @@ The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are 
 
 ## Enhanced Broadcasting
 
+**Platform scope:** this is OBS's **Multitrack Video** mode, called **Enhanced Broadcasting** on Twitch. OBS 33 also configures it for Amazon IVS, Whowatch, PandaTV and Dolby OptiView Real-time; availability depends on the service/account. **YouTube does not use this OBS mode**: select a GPU-named AMF Bridge encoder in normal Output settings. Codec support (H.264/HEVC/AV1) is a separate question. These upstream integrations are not claims of end-to-end service validation for this plugin. [Platform details](docs/enhanced-broadcasting.md#platform-scope)
+
 **Keep Enhanced Broadcasting enabled and choose its encoding GPU separately.** In **Tools → GPU Encoder Bridge: Enhanced Broadcasting**, enable GPU binding, select your iGPU and save. This profile-specific setting replaces every live video track after OBS negotiates the plan, even when its usual encoder dropdown is locked.
 
 Independent recording choices stay unchanged. OBS's own enhanced-stream dump follows the live encoders. Missing GPUs and incompatible plans block startup instead of falling back to another GPU. [Setup, behavior and limits →](docs/enhanced-broadcasting.md)

@@ -39,6 +39,8 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
 
 ## 拡張配信でも GPU を指定
 
+**サービスの範囲：** OBS の **Multitrack Video** モードは、Twitch では **Enhanced Broadcasting** と呼ばれます。OBS 33 は Amazon IVS、Whowatch、PandaTV、Dolby OptiView Real-time にも接続設定を持ちますが、利用条件はサービスとアカウントによります。**YouTube はこの OBS モードを使用しません**。通常の出力設定で GPU 名付き AMF Bridge を選択してください。H.264／HEVC／AV1 の対応は別の条件です。上流の接続設定は本プラグインの配信受信検証済みを意味しません。[対応範囲の詳細](enhanced-broadcasting.md#platform-scope)
+
 OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge：拡張配信**で GPU 固定を有効にし、内蔵 GPU を選択して保存します。プロファイルごとの設定で、サービスの構成取得後に全配信映像トラックを置き換えます。通常のエンコーダー選択欄が無効でも機能します。
 
 独立した録画設定は変更しません。拡張配信に付属するストリーム保存は配信と同じエンコーダーを使用します。GPU の欠落や非対応の構成は配信開始を中止し、別 GPU へ自動変更しません。[手順・動作・制限 →](enhanced-broadcasting.md)

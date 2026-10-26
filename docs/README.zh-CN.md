@@ -39,6 +39,8 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 
 ## 增强广播也能指定编码显卡
 
+**平台范围：** 这是 OBS 的 **多轨视频（Multitrack Video）** 模式，Twitch 将其称为 **增强广播（Enhanced Broadcasting）**。OBS 33 也为 Amazon IVS、Whowatch、PandaTV 和 Dolby OptiView Real-time 配置了接入，能否使用取决于平台及账号。**YouTube 没有接入这个 OBS 模式**，在普通输出设置中选择显卡名称对应的 AMF Bridge 编码器即可。是否支持 H.264／HEVC／AV1 是另一回事。上游接入不等于本插件已在这些平台完成端到端实测。[平台范围详情](enhanced-broadcasting.md#platform-scope)
+
 保留 OBS 的增强广播开启，在 **工具 → GPU Encoder Bridge：增强广播** 中勾选强制绑定、选择核显并保存。设置按 OBS 配置文件分别保存，平台方案生成后会替换全部直播视频轨道，即使原来的编码器下拉框被锁定也能生效。
 
 独立录制的编码选项与设置保持独立；增强广播自带的直播副本跟随直播编码。显卡缺失或方案不兼容时阻止启动，不自动改用其他显卡。[操作步骤、原理与限制 →](enhanced-broadcasting.md)
