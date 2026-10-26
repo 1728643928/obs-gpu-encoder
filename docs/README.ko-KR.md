@@ -16,6 +16,19 @@ GPU Encoder Bridge는 GPU 이름이 표시되는 기본 인코더를 OBS에 추�
 
 방송 서비스, 오디오, 네트워크 및 방송 시작·종료는 계속 OBS가 처리합니다. 별도의 제어 앱이 필요하지 않습니다.
 
+## 이 플러그인을 만든 이유
+
+**AMD GPU가 두 개여도 기본 인코더 목록에는 GPU별 선택 항목이 없었습니다.** 이 프로젝트는 **Ryzen 7 9700X 내장 GPU와 Radeon RX 9060 XT**를 함께 사용하는 PC에서 시작했습니다. 그 환경의 OBS에는 **AMD HW H.264 (AVC)**, **AMD HW H.265 (HEVC)**처럼 AMD 인코더와 코덱을 나타내는 항목이 표시되며, 각 물리 GPU의 항목은 따로 표시되지 않았습니다. OBS 33의 [기본 텍스처 AMF 구현](https://github.com/obsproject/obs-studio/blob/33.0.0/plugins/obs-ffmpeg/texture-amf.cpp#L356-L373)은 OBS 렌더링 GPU를 사용합니다.
+
+목표는 **게임, 모니터와 OBS 렌더링을 RX 9060 XT에 유지하고 방송 인코딩은 9700X 내장 GPU에 맡기는 것**이었습니다. Windows GPU 설정이나 모니터 연결을 바꾸거나 내장 GPU에 모니터를 추가로 연결할 필요가 없는 방법입니다. **인코딩 GPU를 독립적으로 선택하기 위해 GPU Encoder Bridge를 만들었습니다.**
+
+| 원래 환경의 인코더 선택 | 표시 예시(축약) |
+| --- | --- |
+| 기본 OBS | AMD/코덱 단위의 **AMD HW H.264 (AVC)**. |
+| 플러그인 설치 후 | **RX 9060 XT — H.264**와 **Radeon(TM) Graphics — H.264**를 따로 표시하고 각각 해당 GPU에 고정. |
+
+각 AMD GPU를 검사하여 지원하는 **GPU 모델＋코덱** 조합을 추가합니다. OBS 렌더링 GPU를 유지하면서 인코딩할 물리 GPU를 명확하게 선택할 수 있습니다.
+
 ## OBS에서 보이는 모습
 
 **설정 → 출력 → 고급 → 방송 → 비디오 인코더**에서 **AMF Bridge**로 끝나는 항목을 선택합니다.

@@ -16,6 +16,19 @@ GPU Encoder Bridge adds native, GPU-named encoders to OBS. Use an AMD iGPU or an
 
 OBS still handles your streaming platform, audio, network connection and Start/Stop Streaming buttons. The plugin needs no separate control app.
 
+## Why this plugin exists
+
+**Two AMD GPUs, but no separate GPU choices in the stock encoder list.** This project began with a PC containing a **Ryzen 7 9700X iGPU and a Radeon RX 9060 XT**. In that setup, OBS offered entries such as **AMD HW H.264 (AVC)** and **AMD HW H.265 (HEVC)**, rather than a separate entry for each physical AMD GPU. OBS 33's [built-in texture AMF path](https://github.com/obsproject/obs-studio/blob/33.0.0/plugins/obs-ffmpeg/texture-amf.cpp#L356-L373) uses the OBS rendering adapter.
+
+The goal was to keep the game, display and OBS rendering on the RX 9060 XT while using the 9700X iGPU for encoding, without changing Windows GPU preferences or connecting a display to the iGPU. **That missing independent encoding-GPU choice is why GPU Encoder Bridge was created.**
+
+| Encoder selection in the original setup | Example labels (shortened) |
+| --- | --- |
+| Stock OBS | **AMD HW H.264 (AVC)** — one codec entry without separate GPU model names. |
+| GPU Encoder Bridge | Separate **RX 9060 XT — H.264** and **Radeon(TM) Graphics — H.264** entries, each bound to the named device. |
+
+The plugin probes each AMD GPU and adds the supported **GPU model + codec** combinations. You can explicitly choose which physical GPU does the encoding while OBS keeps its rendering GPU.
+
 ## Inside OBS
 
 Open **Settings → Output → Advanced → Streaming → Video Encoder** and choose an entry ending in **AMF Bridge**.

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Explain the original dual-AMD encoder-selection problem, the 9700X/RX 9060 XT use case and before/after GPU choices near the top of all four homepages, with a reference to OBS 33's native AMF adapter selection.
+
 - Clarify platform-specific Enhanced Broadcasting / Multitrack Video integration on all four homepages and in the guide; distinguish YouTube's ordinary ingest/server transcoding and upstream integration from plugin end-to-end validation.
 
 ## 0.3.1
