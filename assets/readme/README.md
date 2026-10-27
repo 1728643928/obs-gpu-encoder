@@ -34,7 +34,7 @@ The README redesign used [oil-oil/beautify-github-readme](https://github.com/oil
 
 ## Localized product screenshots
 
-Captured on 2026-10-27 with Windows 11, OBS Studio 33.0.0 and GPU Encoder Bridge 0.3.0-preview. The 0.3.1 documentation/release update does not change the encoder implementation or these controls. These are native, bounded UI captures; no translated text is painted over an image.
+The original four-language set was captured on 2026-10-27 with Windows 11, OBS Studio 33.0.0 and GPU Encoder Bridge 0.3.0-preview. The 0.3.1 documentation/release update does not change the encoder implementation or these controls. These are native, bounded UI captures; no translated text is painted over an image.
 
 | Page language | Capture folder |
 | --- | --- |
@@ -59,4 +59,6 @@ Keep the screenshots and all five README image paths synchronized. GPU model nam
 
 ## Taiwan Mandarin additions in 0.3.2
 
-The zh-tw captures use the same user-owned OBS 33.0.0 installation with the new zh-TW module resource and a disposable account-free portable profile. The installer is built by CI from the tagged 0.3.2 source. Its Taiwan discovery capture will be added after downloading that published EXE. Standard OBS controls use OBS's upstream zh-TW resource; project-owned text is authored for Taiwan Mandarin. These OBS captures add to, rather than replace, the existing 16 captures.
+The four zh-tw captures were added on 2026-10-27. The OBS views use the same user-owned OBS 33.0.0 installation with the new zh-TW module resource and a disposable account-free portable profile. Standard OBS controls use OBS's upstream zh-TW resource; project-owned text is authored for Taiwan Mandarin. The daily-use configuration was unchanged.
+
+The installer view comes from the actual [published 0.3.2 EXE](https://github.com/1728643928/obs-gpu-encoder/releases/tag/v0.3.2), built by GitHub Actions from commit f0537d55a3b737e4e30cd803e9eae3c374c62884. Its SHA-256 is **3e4a69c7f790dcc236312adeae259fe6668c82218c63ee19d9565bcce57207c2**. The five-option selector and Taiwan discovery page were checked in current-user mode, then cancelled before installation; no full scan was started. These native captures bring the total to 20, with four matching views for each of the five README languages.

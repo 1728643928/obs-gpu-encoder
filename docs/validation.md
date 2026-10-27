@@ -1,4 +1,19 @@
-# Validation record — 0.1.0-preview
+# Validation record
+
+## 0.3.2 Taiwan Mandarin and five-language distribution
+
+2026-10-27, Windows 11 and the user's existing OBS Studio 33.0.0 x64 installation.
+
+- The [release build](https://github.com/1728643928/obs-gpu-encoder/actions/runs/40425593678) passed compilation, protocol, adapter-policy, enhanced-binding and installer checks.
+- Five plugin locale key sets and five installer message sets match. Placeholder parity and all five installer language declarations passed.
+- The released installer passed install/uninstall fixtures in English, Simplified Chinese, Traditional Chinese (Taiwan), Japanese and Korean. All five locale files were installed; unrelated files survived uninstall. Invalid OBS roots and an exclusively locked target were rejected.
+- The actual OBS zh-TW encoder settings, GPU popup and enhanced-broadcast dialog were inspected for correct glyphs and clipping. Three bounded native screenshots use the new plugin resource and OBS's upstream zh-TW controls. Daily-use profiles, scenes and language were unchanged; the account-free capture configuration was removed.
+- The [published 0.3.2 installer](https://github.com/1728643928/obs-gpu-encoder/releases/tag/v0.3.2), verified against its SHA-256 manifest, showed all five language choices including 繁體中文（台灣）. Its Taiwan discovery page detected the real OBS root and displayed the optional scan controls. The installer was cancelled before copying files; this UI check did not start a full-drive scan.
+- Four matching Taiwan UI captures are stored alongside the original four-language set. Their provenance is recorded in [assets/readme/README.md](../assets/readme/README.md#taiwan-mandarin-additions-in-032).
+
+This release adds localization and documentation, not broader GPU, codec or public-platform validation. Historical records below retain their original version and language counts.
+
+## 0.1.0-preview
 
 2026-10-25, Windows 11, OBS Studio 33.0.0 x64.
 

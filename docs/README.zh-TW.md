@@ -95,6 +95,10 @@ GPU Encoder Bridge 是 OBS 的 Windows 外掛。它會在編碼器清單中加�
 <details>
 <summary>看看安裝程式怎麼找到 OBS</summary>
 
+<p align="center">
+  <img src="../assets/readme/screenshots/zh-tw/installer-obs-discovery.jpg" width="598" alt="台灣繁中安裝程式列出找到的 OBS 位置，並提供掃描所有本機固定磁碟的按鈕。">
+</p>
+
 安裝程式會列出找到的 OBS 位置，讓你選擇或執行完整掃描，再確認安裝根目錄。圖片顯示的是安裝前的尋找步驟。
 
 </details>
