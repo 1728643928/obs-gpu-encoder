@@ -18,6 +18,14 @@ const copy = {
     footer: '直播控制与音频仍由 OBS 处理。',
     description: '显卡分工示意：游戏与 OBS 预览继续使用渲染显卡，另行指定 AMD 显卡编码。画面经系统内存传输，OBS 负责网络推流与音频。'
   },
+  'zh-tw': {
+    subtitle: '遊戲和 OBS 繼續用獨顯，編碼用哪張卡由你決定。',
+    render: '01 / 渲染', encode: '02 / 編碼',
+    renderTitle: '遊戲與 OBS 預覽', renderDetail: '維持使用遊戲用顯示卡',
+    encodeTitle: '你指定的 AMD 顯示卡', encodeDetail: '內顯，或另一張 AMD 顯示卡',
+    footer: '串流控制與音訊，照常交給 OBS。',
+    description: '顯示卡分工示意：遊戲與 OBS 預覽維持使用渲染顯示卡，編碼則交給指定的 AMD 顯示卡。影格經過系統記憶體傳輸，串流與音訊由 OBS 處理。'
+  },
   ja: {
     subtitle: 'ゲーム用 GPU はそのまま。エンコード用 GPU を選べます。',
     render: '01 / 描画', encode: '02 / エンコード',

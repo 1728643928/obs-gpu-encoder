@@ -1,6 +1,6 @@
 ; SPDX-License-Identifier: GPL-2.0-or-later
 #ifndef AppVersion
-  #define AppVersion "0.3.1"
+  #define AppVersion "0.3.2"
 #endif
 #ifndef ProjectURL
   #define ProjectURL "https://github.com/1728643928/obs-gpu-encoder"
@@ -43,6 +43,7 @@ DirExistsWarning=no
 [Languages]
 Name: "en"; MessagesFile: "compiler:Default.isl"
 Name: "zh"; MessagesFile: "languages\ChineseSimplified.isl"
+Name: "tw"; MessagesFile: "languages\ChineseTraditional.isl"
 Name: "ja"; MessagesFile: "compiler:Languages\Japanese.isl"
 Name: "ko"; MessagesFile: "compiler:Languages\Korean.isl"
 #include "messages.iss"

@@ -28,4 +28,4 @@ if(!/^\d+\.\d+\.\d+(?:-[a-z0-9.-]+)?$/.test(version))throw Error('Invalid versio
 const repo=process.env.GITHUB_REPOSITORY||'1728643928/obs-gpu-encoder';
 if(!/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(repo))throw Error('Invalid repository');
 run(compiler,['/Qp','/DAppVersion='+version,'/DProjectURL=https://github.com/'+repo,path.join(root,'installer/setup.iss')]);
-console.log('Built four-language installer for '+version);
+console.log('Built five-language installer for '+version);

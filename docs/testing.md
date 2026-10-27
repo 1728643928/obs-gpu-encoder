@@ -29,7 +29,7 @@ Do not publish private recordings, OBS profiles, stream keys, full system logs o
 
 ## Installer and release validation
 
-Run **node scripts/check-locales.mjs**, build with **--tests**, then **node scripts/build-installer.mjs** and **node scripts/test-installer.mjs**. The installer test accepts **--obs-root PATH** when using an existing OBS rather than build/_deps/obs-runtime. It installs/uninstalls disposable fixtures in four language modes, retains unrelated files, rejects invalid paths and checks exclusive-file locks. These are installation tests, not OBS runtime/ABI tests. Check the interactive four-language selector and full-scan start/stop separately. Hardware encoding remains outside hosted CI. Run **node scripts/package.mjs** only after all intended source files are tracked in Git.
+Run **node scripts/check-locales.mjs**, build with **--tests**, then **node scripts/build-installer.mjs** and **node scripts/test-installer.mjs**. The installer test accepts **--obs-root PATH** when using an existing OBS rather than build/_deps/obs-runtime. It installs/uninstalls disposable fixtures in five language modes, retains unrelated files, rejects invalid paths and checks exclusive-file locks. These are installation tests, not OBS runtime/ABI tests. Check the interactive five-language selector and full-scan start/stop separately. Hardware encoding remains outside hosted CI. Run **node scripts/package.mjs** only after all intended source files are tracked in Git.
 
 ## Enhanced broadcasting regression and hardware checks
 

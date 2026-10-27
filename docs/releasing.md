@@ -7,7 +7,7 @@ Everything required to build and maintain the project is in this repository. The
 ### Upstream release
 
 1. A maintainer with repository write access creates a branch.
-2. Change **version.json** to a new version, update **docs/release-notes.md** in all four languages and update CHANGELOG / validation evidence. Choose the release channel deliberately and retain feature-specific experimental labels and validation limits; a regular Release does not imply broader testing.
+2. Change **version.json** to a new version, update **docs/release-notes.md** in all five languages and update CHANGELOG / validation evidence. Choose the release channel deliberately and retain feature-specific experimental labels and validation limits; a regular Release does not imply broader testing.
 3. Run the documented build, locale, unit, installer and applicable GPU/OBS tests. Submit a PR.
 4. Merge to the default branch. A push that changes version.json builds and tests the plugin and installer, uploads build artifacts, then creates a draft Release, uploads all five assets and publishes it. Versions containing a hyphen become prereleases and never become Latest. Regular versions explicitly become Latest only when publication completes. A repository with only prereleases has no latest full release, so its sidebar can show only tags.
 5. Inspect the Actions result, release assets and checksums. Existing release assets are never overwritten. A failed upload leaves a draft for inspection; remove the failed draft and its unused tag through GitHub before retrying, or bump to a new version. Do not overwrite a distributed release.
@@ -24,7 +24,7 @@ The owner may appoint upstream maintainers or transfer the repository using GitH
 
 ## 简体中文
 
-接手者只需公开源码和公开下载的固定版本工具，无需原作者电脑、个人令牌、推流密钥或私有服务。原仓库维护者建立分支，修改 **version.json**、四语 **docs/release-notes.md** 和验证记录，测试后提交 PR。合并到默认分支且版本文件变化时，Actions 自动构建、测试、先创建草稿 Release，上传全部文件后再公开。带连字符的版本标记为预发布，不能设为 Latest；常规版本在完整发布后明确设为 Latest。只有预发布时，侧栏可能只显示 Tags。常规发布不扩大已验证范围，实验功能继续明确标注。
+接手者只需公开源码和公开下载的固定版本工具，无需原作者电脑、个人令牌、推流密钥或私有服务。原仓库维护者建立分支，修改 **version.json**、五语 **docs/release-notes.md** 和验证记录，测试后提交 PR。合并到默认分支且版本文件变化时，Actions 自动构建、测试、先创建草稿 Release，上传全部文件后再公开。带连字符的版本标记为预发布，不能设为 Latest；常规版本在完整发布后明确设为 Latest。只有预发布时，侧栏可能只显示 Tags。常规发布不扩大已验证范围，实验功能继续明确标注。
 
 也可在 Actions 手动运行工作流，选择默认分支并设 **publish=true**。已有发布不会覆盖；上传失败保留草稿，请检查后删除失败草稿及未使用的标签再重试，或升新版本。构建可重现执行，但尚未证明跨机器/时间逐字节一致；EXE 暂未数字签名。
 
@@ -32,7 +32,7 @@ The owner may appoint upstream maintainers or transfer the repository using GitH
 
 ## 日本語
 
-保守者は公開ソースと固定バージョンの公開ツールのみで作業できます。元開発者の PC、個人トークン、配信キーは不要です。ブランチで **version.json**、4 言語の **docs/release-notes.md**、検証記録を更新して PR を提出します。既定ブランチにバージョン変更をマージすると、ビルド・テスト後に草稿 Release を作成し、全ファイルをアップロードしてから公開します。ハイフン付きバージョンはプレリリースで、Latest には設定しません。通常版は全ファイルの公開完了後に Latest へ設定します。プレリリースのみの場合、サイドバーにタグだけが表示されることがあります。通常版でも実験的機能と検証範囲を明記してください。
+保守者は公開ソースと固定バージョンの公開ツールのみで作業できます。元開発者の PC、個人トークン、配信キーは不要です。ブランチで **version.json**、5 言語の **docs/release-notes.md**、検証記録を更新して PR を提出します。既定ブランチにバージョン変更をマージすると、ビルド・テスト後に草稿 Release を作成し、全ファイルをアップロードしてから公開します。ハイフン付きバージョンはプレリリースで、Latest には設定しません。通常版は全ファイルの公開完了後に Latest へ設定します。プレリリースのみの場合、サイドバーにタグだけが表示されることがあります。通常版でも実験的機能と検証範囲を明記してください。
 
 Actions の手動実行では既定ブランチと **publish=true** を選択します。公開済みファイルは上書きしません。失敗した草稿と未使用タグを確認して削除した後に再試行するか、バージョンを上げてください。環境をまたぐバイト単位の再現性は未確認で、EXE は未署名です。
 
@@ -40,8 +40,12 @@ Fork で Actions を有効化すれば、元所有者の秘密なしで独自 Re
 
 ## 한국어
 
-유지보수자는 공개 소스와 고정 버전 공개 도구만으로 작업할 수 있습니다. 원 개발자의 PC, 개인 토큰, 방송 키는 필요 없습니다. 브랜치에서 **version.json**, 네 언어 **docs/release-notes.md**, 검증 기록을 갱신하고 PR을 제출하세요. 기본 브랜치에 버전 변경을 병합하면 빌드·테스트 후 초안 Release를 만들고 모든 파일을 업로드한 뒤 게시합니다. 하이픈이 포함된 버전은 시험판으로 표시하며 Latest로 설정하지 않습니다. 일반 버전은 모든 파일을 게시한 뒤 Latest로 설정합니다. 시험판만 있으면 사이드바에 태그만 표시될 수 있습니다. 일반 버전에서도 실험 기능과 검증 범위를 명시하세요.
+유지보수자는 공개 소스와 고정 버전 공개 도구만으로 작업할 수 있습니다. 원 개발자의 PC, 개인 토큰, 방송 키는 필요 없습니다. 브랜치에서 **version.json**, 다섯 언어 **docs/release-notes.md**, 검증 기록을 갱신하고 PR을 제출하세요. 기본 브랜치에 버전 변경을 병합하면 빌드·테스트 후 초안 Release를 만들고 모든 파일을 업로드한 뒤 게시합니다. 하이픈이 포함된 버전은 시험판으로 표시하며 Latest로 설정하지 않습니다. 일반 버전은 모든 파일을 게시한 뒤 Latest로 설정합니다. 시험판만 있으면 사이드바에 태그만 표시될 수 있습니다. 일반 버전에서도 실험 기능과 검증 범위를 명시하세요.
 
 Actions 수동 실행 시 기본 브랜치와 **publish=true**를 선택하세요. 기존 릴리스 파일은 덮어쓰지 않습니다. 실패한 초안과 사용하지 않는 태그를 확인·삭제한 뒤 재시도하거나 버전을 올리세요. 환경 간 바이트 단위 재현성은 확인하지 않았으며 EXE에는 아직 디지털 서명이 없습니다.
 
 Fork에서 Actions를 활성화하면 원 소유자의 비밀 없이 자체 Releases를 게시할 수 있습니다. 귀속, 문서 링크, 배포 채널을 수정하고 라이선스 및 제삼자 고지를 유지하세요. 원본 게시 권한은 소유자가 부여합니다. 계정 인증 정보를 인계하지 마세요.
+
+## 繁體中文（台灣）
+
+接手維護只需要公開原始碼與固定版本的公開工具，不需要原作者的電腦、私鑰或個人權杖。在分支更新 **version.json**、五語 **docs/release-notes.md** 與驗證紀錄後提交 PR。版本變更合併到預設分支時，Actions 會建置、測試，並在所有檔案上傳完成後公開 Release。一般版本會設為 Latest；版本號含連字號的預先發行版則保持獨立。Fork 啟用 Actions 後即可用自己的儲存庫發布，請保留授權與第三方聲明。

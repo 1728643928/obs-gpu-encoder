@@ -1,14 +1,14 @@
 <p align="right">
-  <a href="../README.md">English</a> · <strong>简体中文</strong> · <a href="README.ja-JP.md">日本語</a> · <a href="README.ko-KR.md">한국어</a>
+  <a href="../README.md">English</a> · <strong>简体中文</strong> · <a href="README.zh-TW.md">繁體中文（台灣）</a> · <a href="README.ja-JP.md">日本語</a> · <a href="README.ko-KR.md">한국어</a>
 </p>
 
 <p align="center">
   <img src="../assets/readme/hero-zh-cn.svg" width="100%" alt="GPU Encoder Bridge：游戏与 OBS 渲染继续使用独显，另外指定 AMD 核显或其他 AMD 显卡编码。">
 </p>
 
-**[下载 Windows 安装器 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [全部下载](https://github.com/1728643928/obs-gpu-encoder/releases) · [文档索引](README.md) · [问题反馈](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[下载 Windows 安装器 →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.2/GPU-Encoder-Bridge-0.3.2-windows-x64-setup.exe)** · [全部下载](https://github.com/1728643928/obs-gpu-encoder/releases) · [文档索引](README.md) · [问题反馈](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.2** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **按真实显卡名选择编码设备，OBS 继续在游戏显卡上运行。**
 
@@ -46,7 +46,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
   <img src="../assets/readme/screenshots/zh-cn/obs-encoder-settings.jpg" width="100%" alt="OBS 高级输出中选中 Radeon 核显 H.264，显示 CBR、6000 Kbps、2 秒关键帧与均衡预设。">
 </p>
 
-这里选择的是 Ryzen 7 9700X 核显。码率和预设是示例配置，不代表性能测试结果。本页截图使用简体中文界面；切换页面语言即可查看对应的英文、日文或韩文截图。
+这里选择的是 Ryzen 7 9700X 核显。码率和预设是示例配置，不代表性能测试结果。本页截图使用简体中文界面；切换页面语言即可查看对应的英文、台湾繁体中文、日文或韩文截图。
 
 </details>
 
@@ -70,7 +70,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 | --- | --- |
 | 0.2.0 独立编码进程测试 | 1080p60 输入 300 帧，输出 300 个数据包、3 个关键帧。 |
 | 此前 OBS 本地 RTMP 测试 | 约 47 秒视频和音频成功接收、解码；OBS 仍在 RX 9060 XT 上渲染。 |
-| 四语安装器检查 | 四种语言安装、卸载通过；无效路径与被占用目标遭拒绝。 |
+| 0.2.0 四语安装器检查 | 四种语言安装、卸载通过；无效路径与被占用目标遭拒绝。 |
 
 这些是有明确范围的验证记录，不是游戏性能跑分。HEVC/AV1 仅有能力探测，未完成同等级 OBS 直播验收；公网直播平台接收尚未验证。[查看完整验证记录 →](validation.md)
 
@@ -79,7 +79,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 - **显卡与编码格式。** 每个条目同时显示真实设备及 H.264、HEVC 或 AV1，实际探测成功才提供；直播平台可能进一步限制格式。
 - **熟悉的 OBS 参数。** 支持 CBR/VBR、码率、关键帧间隔，以及速度、均衡、质量预设。
 - **明确绑定设备。** 过滤仅用于间接显示的虚拟别名，真实同型号双卡分别保留；出错不会悄悄换显卡或改为软件编码。
-- **四种语言。** 插件、EXE 安装器与入门文档均提供英文、简体中文、日文和韩文。
+- **五种语言。** 插件、EXE 安装器与入门文档均提供英文、简体中文、繁体中文（台湾）、日文和韩文。
 
 ## 安装并开始直播
 
@@ -111,7 +111,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 | OBS 根目录下 | 文件 |
 | --- | --- |
 | `obs-plugins/64bit/` | `obs-gpu-encoder.dll` 与 `obs-gpu-encoder-worker.exe` |
-| `data/obs-plugins/obs-gpu-encoder/` | 四语资源、声明与卸载器。 |
+| `data/obs-plugins/obs-gpu-encoder/` | 五语资源、声明与卸载器。 |
 
 扫描只枚举本地固定磁盘目录，不读取个人文档内容、不上传文件。无权限目录与重解析点会跳过；网络盘、可移动盘及仅通过链接挂载的卷请手动浏览。大容量磁盘可能耗时，可随时停止。
 
@@ -149,7 +149,7 @@ GPU Encoder Bridge 在 OBS 原生编码器列表中加入显卡名称，让 AMD 
 | [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | 使用编码器接口与头文件，开发时参考了其 AMF 实现；渲染、音频与推流仍由 OBS 完成。 |
 | [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | 通过 OBS 提供的 libavcodec/libavutil DLL 使用其实际 AMF 编码实现与 D3D11 硬件上下文接口。 |
 | [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | 使用显卡驱动提供的硬件编码运行时；选卡与验证参考了 AMD 官方 FFmpeg/AMF 指南。 |
-| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | 使用 EXE 安装引擎及标准界面翻译；简体中文文件直接沿用上游原文件，作者署名为 [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation)。 |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | 使用 EXE 安装引擎及标准界面翻译；简体中文文件直接沿用上游原文件，作者署名为 [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation)。 台湾繁体资源沿用上游 **Enfeng Tsao** 的翻译，保留 **Samuel Lee** 的既有署名，仅调整语言选择名称。 |
 | [Zig](https://github.com/ziglang/zig/tree/0.14.1) 及其附带的 LLVM/MinGW 工具链 | 用于编译、链接、Windows 头文件及链接进程序的 C/C++ 运行时组件。 |
 | [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | 参考其 README 内容组织与视觉设计指导；显卡分工 SVG 和生成脚本为本仓库制作。 |
 
@@ -185,13 +185,13 @@ node scripts/package.mjs
 | 目录 | 职责与入口 |
 | --- | --- |
 | [src/](../src/README.md) | OBS 原生接入、AMD 后端、显卡筛选与进程通信。 |
-| [installer/](../installer/README.md) | EXE 向导、OBS 查找、路径校验与四语提示。 |
+| [installer/](../installer/README.md) | EXE 向导、OBS 查找、路径校验与五语提示。 |
 | [scripts/](../scripts/README.md) | 构建、翻译检查、安装测试、打包与发版。 |
 | [tests/](../tests/README.md) | CPU 回归、实际显卡测试与文件锁辅助工具。 |
-| [data/](../data/README.md) | OBS 四语资源与翻译规则。 |
+| [data/](../data/README.md) | OBS 五语资源与翻译规则。 |
 | [docs/](README.md) | 入门、架构、测试、验证与发布交接。 |
 | [.github/](../.github/AUTOMATION.md) | CI、发版权限与问题模板。 |
-| [assets/readme/](../assets/readme/README.md) | 可编辑四语视觉与无依赖生成脚本。 |
+| [assets/readme/](../assets/readme/README.md) | 可编辑五语视觉与无依赖生成脚本。 |
 | [third-party/](../third-party/README.md) | 运行时、工具链与安装器的第三方许可原文。 |
 
 [CHANGELOG.md](../CHANGELOG.md) 记录版本变化，[version.json](../version.json) 控制构建和发版版本；[.gitattributes](../.gitattributes) 管理换行，[.gitignore](../.gitignore) 排除生成文件。贡献、权限、许可证与依赖说明见上方链接。

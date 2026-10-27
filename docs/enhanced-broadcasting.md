@@ -61,7 +61,7 @@ The current backend remains SDR/NV12/8-bit AMD AMF with system-memory frame tran
 
 ## Implementation and references
 
-- [enhanced-frontend.cpp](../src/enhanced-frontend.cpp): four-language Tools dialog, per-profile preferences and lifecycle callback.
+- [enhanced-frontend.cpp](../src/enhanced-frontend.cpp): five-language Tools dialog, per-profile preferences and lifecycle callback.
 - [enhanced-output.cpp](../src/enhanced-output.cpp): atomic plan validation, replacement encoders, companion stream dump and failure guard.
 - [Regression and hardware harness](../tests/enhanced-output-test.cpp).
 - OBS 33 sources: [pre-start event timing](https://github.com/obsproject/obs-studio/blob/33.0.0/frontend/widgets/OBSBasic_Streaming.cpp), [prepared streaming-output API](https://github.com/obsproject/obs-studio/blob/33.0.0/frontend/OBSStudioAPI.cpp), [multitrack output](https://github.com/obsproject/obs-studio/blob/33.0.0/frontend/utility/MultitrackVideoOutput.cpp) and [public encoder/output APIs](https://github.com/obsproject/obs-studio/blob/33.0.0/libobs/obs.h).

@@ -12,7 +12,7 @@ const {version}=JSON.parse(await fs.readFile(path.join(root,'version.json'),'utf
 const setup=path.join(root,'release','GPU-Encoder-Bridge-'+version+'-windows-x64-setup.exe');
 const base=path.join(root,'build/installer-tests');await fs.mkdir(base,{recursive:true});
 const run=(exe,argv,expected=0)=>{const r=spawnSync(exe,argv,{cwd:base,windowsHide:true,encoding:'utf8',timeout:30000});assert.ifError(r.error);assert.equal(r.status,expected,'Unexpected installer exit '+r.status+' '+r.stderr);};
-for(const lang of ['en','zh','ja','ko']){
+for(const lang of ['en','zh','tw','ja','ko']){
  const dir=path.join(base,'OBS fixture '+lang+' 测试');
  await fs.mkdir(path.join(dir,'bin/64bit'),{recursive:true});
  await fs.copyFile(path.join(obs,'bin/64bit/obs64.exe'),path.join(dir,'bin/64bit/obs64.exe'));
@@ -23,13 +23,13 @@ for(const lang of ['en','zh','ja','ko']){
  const argv=['/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/CURRENTUSER','/LANG='+lang,'/DIR='+dir];
  run(setup,argv);
  for(const file of ['obs-gpu-encoder.dll','obs-gpu-encoder-worker.exe'])assert((await fs.stat(path.join(dir,'obs-plugins/64bit',file))).size>10000);
- for(const locale of ['en-US','zh-CN','ja-JP','ko-KR'])assert((await fs.stat(path.join(dir,'data/obs-plugins/obs-gpu-encoder/locale',locale+'.ini'))).size>100);
+ for(const locale of ['en-US','zh-CN','zh-TW','ja-JP','ko-KR'])assert((await fs.stat(path.join(dir,'data/obs-plugins/obs-gpu-encoder/locale',locale+'.ini'))).size>100);
  const extra=path.join(dir,'data/obs-plugins/obs-gpu-encoder/user-note.txt');await fs.writeFile(extra,'keep user file');
  run(path.join(dir,'data/obs-plugins/obs-gpu-encoder/uninstall/unins000.exe'),['/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART']);
  await assert.rejects(fs.access(path.join(dir,'obs-plugins/64bit/obs-gpu-encoder.dll')));
  assert.equal(await fs.readFile(sentinel,'utf8'),'keep');assert.equal(await fs.readFile(extra,'utf8'),'keep user file');
  assert((await fs.stat(path.join(dir,'bin/64bit/obs64.exe'))).size>100000);
- console.log('PASS '+lang+' install/uninstall; four locales; unrelated files retained');
+ console.log('PASS '+lang+' install/uninstall; five locales; unrelated files retained');
 }
 const invalid=path.join(base,'not OBS');await fs.mkdir(invalid,{recursive:true});
 const fail=spawnSync(setup,['/VERYSILENT','/SUPPRESSMSGBOXES','/NORESTART','/CURRENTUSER','/DIR='+invalid],{windowsHide:true,timeout:15000});assert(fail.status!==0);await assert.rejects(fs.access(path.join(invalid,'obs-plugins/64bit/obs-gpu-encoder.dll')));console.log('PASS invalid OBS root rejected without plugin files');

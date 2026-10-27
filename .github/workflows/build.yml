@@ -29,11 +29,11 @@ jobs:
       - name: Decide release intent
         id: intent
         run: node scripts/ci-release-intent.mjs
-      - name: Check all four languages
+      - name: Check all five languages
         run: node scripts/check-locales.mjs
       - name: Build plugin and run unit tests
         run: node scripts/build.mjs --download-obs --tests
-      - name: Build four-language installer
+      - name: Build five-language installer
         run: node scripts/build-installer.mjs
       - name: Test installation and uninstall in disposable fixtures
         run: node scripts/test-installer.mjs

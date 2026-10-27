@@ -1,14 +1,14 @@
 <p align="right">
-  <strong>English</strong> · <a href="docs/README.zh-CN.md">简体中文</a> · <a href="docs/README.ja-JP.md">日本語</a> · <a href="docs/README.ko-KR.md">한국어</a>
+  <strong>English</strong> · <a href="docs/README.zh-CN.md">简体中文</a> · <a href="docs/README.zh-TW.md">繁體中文（台灣）</a> · <a href="docs/README.ja-JP.md">日本語</a> · <a href="docs/README.ko-KR.md">한국어</a>
 </p>
 
 <p align="center">
   <img src="assets/readme/hero-en.svg" width="100%" alt="GPU Encoder Bridge for OBS: keep the game and OBS rendering on your gaming GPU, and choose an AMD GPU for encoding.">
 </p>
 
-**[Download the Windows installer →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [All downloads](https://github.com/1728643928/obs-gpu-encoder/releases) · [Documentation](docs/README.md) · [Report a bug](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Download the Windows installer →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.2/GPU-Encoder-Bridge-0.3.2-windows-x64-setup.exe)** · [All downloads](https://github.com/1728643928/obs-gpu-encoder/releases) · [Documentation](docs/README.md) · [Report a bug](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.2** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **Choose the encoding GPU by its actual name. Keep OBS on your gaming GPU.**
 
@@ -46,7 +46,7 @@ This real 0.3.0-preview capture shows two GPUs and their available formats. **AM
   <img src="assets/readme/screenshots/en/obs-encoder-settings.jpg" width="100%" alt="OBS Advanced Output settings with Radeon integrated graphics selected for H.264, CBR at 6000 Kbps, 2-second keyframes and the Balanced preset.">
 </p>
 
-The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are example values, not a performance result. Screenshots on this page use the English UI. Switch the page language above to see matching Chinese, Japanese or Korean captures.
+The selected device is the Ryzen 7 9700X iGPU. The bitrate and preset shown are example values, not a performance result. Screenshots on this page use the English UI. Switch the page language above to see matching Simplified Chinese, Traditional Chinese (Taiwan), Japanese or Korean captures.
 
 </details>
 
@@ -70,7 +70,7 @@ Independent recording choices stay unchanged. OBS's own enhanced-stream dump fol
 | --- | --- |
 | 0.2.0 worker encoding test | 300 input frames → 300 packets, with 3 keyframes at 1080p60. |
 | Earlier OBS local RTMP test | About 47 seconds of video and audio received and decoded; OBS kept rendering on the RX 9060 XT. |
-| Four-language installer checks | Install/uninstall passed in all four language modes; invalid and occupied destinations were rejected. |
+| 0.2.0 four-language installer checks | Install/uninstall passed in all four language modes; invalid and occupied destinations were rejected. |
 
 These are scoped validation results, not gaming benchmarks. HEVC/AV1 have capability probes, not the same full OBS streaming acceptance. Public-platform receiving has not been validated. [Read the full validation record →](docs/validation.md)
 
@@ -79,7 +79,7 @@ These are scoped validation results, not gaming benchmarks. HEVC/AV1 have capabi
 - **GPU + codec, together.** Entries identify the actual adapter and H.264, HEVC or AV1. Only combinations that pass a real probe are offered; your streaming service may further limit codecs.
 - **Familiar encoder controls.** CBR/VBR, bitrate, keyframe interval and Speed/Balanced/Quality presets, inside OBS.
 - **Explicit device selection.** Display-only virtual aliases are filtered; real identical-model cards remain separate. An error never silently switches to another GPU or software encoding.
-- **Four languages.** English, 简体中文, 日本語 and 한국어 in the plugin, EXE installer and getting-started guides.
+- **Five language options.** English, 简体中文, 繁體中文（台灣）, 日本語 and 한국어 in the plugin, EXE installer and getting-started guides.
 
 ## Install and stream
 
@@ -111,7 +111,7 @@ Choose the OBS root, not an arbitrary plugin folder. The installer writes to:
 | Under your OBS root | File |
 | --- | --- |
 | `obs-plugins/64bit/` | `obs-gpu-encoder.dll` and `obs-gpu-encoder-worker.exe` |
-| `data/obs-plugins/obs-gpu-encoder/` | Four-language resources, notices and the uninstaller. |
+| `data/obs-plugins/obs-gpu-encoder/` | Five-language resources, notices and the uninstaller. |
 
 The scan enumerates directories on local fixed drives. It does not read personal document contents or upload files. Inaccessible folders and reparse points are skipped. Network/removable drives and volumes reachable only through links require manual browsing. Large drives can take time; the scan can be stopped.
 
@@ -149,7 +149,7 @@ This project builds on the following work. The scope of each reference or reused
 | [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | Encoder API and headers; its AMF implementation was an implementation reference. OBS supplies rendering, audio and stream publishing. |
 | [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | The actual AMF codec implementations and D3D11 hardware-context APIs, used through OBS-provided libavcodec/libavutil DLLs. |
 | [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | Driver-provided hardware encoding runtime; AMD's FFmpeg/AMF guide informed device selection and validation. |
-| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE installer engine and standard UI translations. The Simplified Chinese file is reused unchanged from upstream and credits [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation). |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE installer engine and standard UI translations. The Simplified Chinese file is reused unchanged from upstream and credits [Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation). Traditional Chinese is based on upstream messages by **Enfeng Tsao**, retaining the earlier **Samuel Lee** credit; only its language selector name is adjusted. |
 | [Zig](https://github.com/ziglang/zig/tree/0.14.1) and its bundled LLVM/MinGW toolchain | Compiler, linker, Windows headers and linked C/C++ runtime components. |
 | [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | README structure and visual-design guidance. The GPU-role SVGs and their generator were created for this repository. |
 
@@ -185,13 +185,13 @@ For an existing OBS installation, replace **--download-obs** with **--obs-root "
 | Directory | Start here |
 | --- | --- |
 | [src/](src/README.md) | Native OBS integration, AMD backend, GPU filtering and worker communication. |
-| [installer/](installer/README.md) | EXE wizard, OBS discovery, target validation and four-language messages. |
+| [installer/](installer/README.md) | EXE wizard, OBS discovery, target validation and five-language messages. |
 | [scripts/](scripts/README.md) | Build, locale checks, installer tests, packaging and Releases. |
 | [tests/](tests/README.md) | CPU regressions, GPU harnesses and file-lock fixtures. |
-| [data/](data/README.md) | Four OBS locale resources and translation rules. |
+| [data/](data/README.md) | Five OBS locale resources and translation rules. |
 | [docs/](docs/README.md) | Setup, architecture, testing, validation and release handover. |
 | [.github/](.github/AUTOMATION.md) | CI jobs, release permissions and bug-report intake. |
-| [assets/readme/](assets/readme/README.md) | Editable four-language artwork and its dependency-free generator. |
+| [assets/readme/](assets/readme/README.md) | Editable five-language artwork and its dependency-free generator. |
 | [third-party/](third-party/README.md) | Upstream runtime, toolchain and installer license texts. |
 
 [CHANGELOG.md](CHANGELOG.md) records changes; [version.json](version.json) drives build/release versions. [.gitattributes](.gitattributes) defines line endings and [.gitignore](.gitignore) excludes generated files. Contribution, governance, license and dependency details are linked above.

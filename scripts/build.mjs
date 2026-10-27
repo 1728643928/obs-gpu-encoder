@@ -79,7 +79,7 @@ const libraries=['build/lib/avcodec-62.dll.a','build/lib/avutil-60.dll.a','-ld3d
 run(zig,[...common,'-c','src/backend.cpp','-o','build/backend.obj'],env);
 run(zig,[...common,'-s','build/backend.obj','src/worker.cpp',...libraries,'-o','dist/obs-plugins/64bit/obs-gpu-encoder-worker.exe'],env);
 run(zig,[...common,'-s','-I'+obs,'build/backend.obj','src/plugin.cpp','src/worker-client.cpp','src/enhanced-output.cpp','src/enhanced-frontend.cpp','-luser32','-shared','build/lib/obs-frontend-api.dll.a','build/lib/obs.dll.a',...libraries,'-o','dist/obs-plugins/64bit/obs-gpu-encoder.dll'],env);
-for(const locale of ['en-US','zh-CN','ja-JP','ko-KR'])
+for(const locale of ['en-US','zh-CN','zh-TW','ja-JP','ko-KR'])
  await fs.copyFile(path.join(root,'data/locale',locale+'.ini'),path.join(output,'data/obs-plugins/obs-gpu-encoder/locale',locale+'.ini'));
 for(const name of ['README.md','LICENSE','THIRD-PARTY.md'])await fs.copyFile(path.join(root,name),path.join(output,name));
 await fs.cp(path.join(root,'third-party'),path.join(output,'third-party'),{recursive:true});

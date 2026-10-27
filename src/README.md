@@ -5,7 +5,7 @@ The plugin and worker are separate Windows x64 binaries. Start with this file wh
 | File | Responsibility / 职责 |
 | --- | --- |
 | [plugin.cpp](plugin.cpp) | OBS module entry point; registers GPU/codec encoder choices, properties, defaults and frame callbacks. / OBS 接口、编码器列表、参数和画面回调。 |
-| [enhanced-frontend.cpp](enhanced-frontend.cpp) | Four-language Tools dialog, per-profile enhanced GPU selection and pre-start lifecycle integration. / 增强广播四语选卡设置及启动前回调。 |
+| [enhanced-frontend.cpp](enhanced-frontend.cpp) | Five-language Tools dialog, per-profile enhanced GPU selection and pre-start lifecycle integration. / 增强广播五语选卡设置及启动前回调。 |
 | [enhanced-output.cpp](enhanced-output.cpp) | Validate and replace every live video encoder, preserve rendition metadata, synchronize groups and block fallback. / 全轨道替换、参数保留、同步与失败阻断。 |
 | [enhanced-output.hpp](enhanced-output.hpp) | GPU/codec bindings and routing/frontend interfaces. / 增强广播绑定和接管接口。 |
 | [backend.hpp](backend.hpp) | Shared adapter, codec, settings and packet types; the backend interface. / 显卡、格式、参数和数据包接口。 |

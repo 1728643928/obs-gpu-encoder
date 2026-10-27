@@ -1,14 +1,14 @@
 <p align="right">
-  <a href="../README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <strong>日本語</strong> · <a href="README.ko-KR.md">한국어</a>
+  <a href="../README.md">English</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.zh-TW.md">繁體中文（台灣）</a> · <strong>日本語</strong> · <a href="README.ko-KR.md">한국어</a>
 </p>
 
 <p align="center">
   <img src="../assets/readme/hero-ja.svg" width="100%" alt="GPU Encoder Bridge：ゲームと OBS の描画用 GPU は維持し、エンコード用 AMD GPU を別に選択できます。">
 </p>
 
-**[Windows インストーラーをダウンロード →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.1/GPU-Encoder-Bridge-0.3.1-windows-x64-setup.exe)** · [すべての配布物](https://github.com/1728643928/obs-gpu-encoder/releases) · [ドキュメント](README.md) · [不具合報告](https://github.com/1728643928/obs-gpu-encoder/issues)
+**[Windows インストーラーをダウンロード →](https://github.com/1728643928/obs-gpu-encoder/releases/download/v0.3.2/GPU-Encoder-Bridge-0.3.2-windows-x64-setup.exe)** · [すべての配布物](https://github.com/1728643928/obs-gpu-encoder/releases) · [ドキュメント](README.md) · [不具合報告](https://github.com/1728643928/obs-gpu-encoder/issues)
 
-**0.3.1** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
+**0.3.2** · Windows x64 · OBS Studio 33.x · AMD AMF · GPL-2.0-or-later
 
 **エンコード用 GPU を実際の名前で選択。OBS はゲーム用 GPU のまま。**
 
@@ -46,7 +46,7 @@ GPU Encoder Bridge は GPU 名付きのネイティブエンコーダーを OBS 
   <img src="../assets/readme/screenshots/ja/obs-encoder-settings.jpg" width="100%" alt="OBS 詳細出力で Radeon 内蔵 GPU の H.264 を選択。CBR、6000 Kbps、キーフレーム 2 秒、バランスを表示。">
 </p>
 
-選択したデバイスは Ryzen 7 9700X 内蔵 GPU です。ビットレートとプリセットは設定例であり、性能の測定結果ではありません。このページの画像は日本語 UI です。ページの言語を切り替えると、英語、中国語、韓国語の画像を確認できます。
+選択したデバイスは Ryzen 7 9700X 内蔵 GPU です。ビットレートとプリセットは設定例であり、性能の測定結果ではありません。このページの画像は日本語 UI です。ページの言語を切り替えると、英語、簡体字中国語、台湾向け繁体字中国語、韓国語の画像を確認できます。
 
 </details>
 
@@ -70,7 +70,7 @@ OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge
 | --- | --- |
 | 0.2.0 ワーカーテスト | 1080p60 で入力 300 フレーム → 出力 300 パケット、キーフレーム 3。 |
 | 以前の OBS ローカル RTMP テスト | 約 47 秒の映像と音声を受信・デコード。OBS の描画は RX 9060 XT を維持。 |
-| 4 言語のインストーラーテスト | 全言語で導入・削除を確認。無効な配置先と使用中のファイルを拒否。 |
+| 0.2.0 の 4 言語インストーラーテスト | 全言語で導入・削除を確認。無効な配置先と使用中のファイルを拒否。 |
 
 これらは範囲を限定した検証結果であり、ゲーム性能のベンチマークではありません。HEVC/AV1 は能力検証のみで、同等の OBS 配信テストは未実施です。公開配信サービスでの受信も未検証です。[詳しい検証記録 →](validation.md)
 
@@ -79,7 +79,7 @@ OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge
 - **GPU とコーデック。** 実際のデバイス名と H.264、HEVC、AV1 を表示します。実機の短いエンコード検証に成功した組み合わせのみ提供し、配信サービス側の制限も適用されます。
 - **使い慣れた設定。** OBS 内で CBR/VBR、ビットレート、キーフレーム間隔、速度・バランス・品質プリセットを設定できます。
 - **明示的なデバイス指定。** 表示専用の仮想アダプターを除外し、実在する同型カードは別々に保持します。失敗時に他の GPU やソフトウェアへ自動変更しません。
-- **4 言語。** プラグイン、EXE と導入ガイドに英語、簡体字中国語、日本語、韓国語を用意しています。
+- **5 言語。** プラグイン、EXE と導入ガイドに英語、簡体字中国語、台湾向け繁体字中国語、日本語、韓国語を用意しています。
 
 ## インストールして配信
 
@@ -111,7 +111,7 @@ OBS の拡張配信を有効にしたまま、**ツール → GPU Encoder Bridge
 | OBS ルートからのパス | ファイル |
 | --- | --- |
 | `obs-plugins/64bit/` | `obs-gpu-encoder.dll` と `obs-gpu-encoder-worker.exe` |
-| `data/obs-plugins/obs-gpu-encoder/` | 4 言語リソース、ライセンス表示、アンインストーラー。 |
+| `data/obs-plugins/obs-gpu-encoder/` | 5 言語リソース、ライセンス表示、アンインストーラー。 |
 
 検索はローカル固定ドライブのディレクトリを列挙します。個人文書の内容を読んだりアップロードしたりしません。アクセス不能なフォルダーと再解析ポイントを省略します。ネットワーク・リムーバブルドライブやリンク経由のみのボリュームは手動参照してください。大きなドライブは時間がかかりますが、途中で停止できます。
 
@@ -149,7 +149,7 @@ ZIP 内の **obs-plugins** と **data** を OBS ルートに統合します。�
 | [OBS Studio](https://github.com/obsproject/obs-studio/tree/33.0.0) | エンコーダー API とヘッダーを利用し、AMF 実装を開発時に参照しました。描画・音声・配信は OBS が担当します。 |
 | [FFmpeg](https://github.com/FFmpeg/FFmpeg/tree/n8.0) | OBS 付属の libavcodec/libavutil DLL を通じて、AMF エンコーダー実装と D3D11 ハードウェアコンテキスト API を利用します。 |
 | [AMD AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) | ドライバー提供のハードウェアエンコード機能を利用します。GPU 選択と検証には AMD の FFmpeg/AMF ガイドを参照しました。 |
-| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE エンジンと標準 UI の翻訳を利用します。簡体字中国語ファイルは上流から変更せず使用し、[Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation) の著作者表示を保持しています。 |
+| [Inno Setup](https://github.com/jrsoftware/issrc/tree/is-6_7_3) | EXE エンジンと標準 UI の翻訳を利用します。簡体字中国語ファイルは上流から変更せず使用し、[Zhenghan Yang / Kira](https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation) の著作者表示を保持しています。 台湾向け繁体字は **Enfeng Tsao** の上流翻訳を利用し、**Samuel Lee** の既存表示を保持します。言語選択名のみ変更しています。 |
 | [Zig](https://github.com/ziglang/zig/tree/0.14.1) と同梱 LLVM/MinGW ツールチェーン | コンパイラー、リンカー、Windows ヘッダー、リンクされる C/C++ ランタイムを利用します。 |
 | [oil-oil/beautify-github-readme](https://github.com/oil-oil/beautify-github-readme) | README の構成とビジュアル設計の指針を参照しました。GPU の役割を示す SVG と生成スクリプトは本リポジトリ向けに制作しました。 |
 
@@ -185,13 +185,13 @@ node scripts/package.mjs
 | ディレクトリ | 役割と入口 |
 | --- | --- |
 | [src/](../src/README.md) | OBS 連携、AMD バックエンド、GPU 選別、ワーカー通信。 |
-| [installer/](../installer/README.md) | EXE、OBS 検出、配置先検証、4 言語表示。 |
+| [installer/](../installer/README.md) | EXE、OBS 検出、配置先検証、5 言語表示。 |
 | [scripts/](../scripts/README.md) | ビルド、翻訳検査、導入テスト、パッケージ、公開。 |
 | [tests/](../tests/README.md) | CPU 回帰、実機 GPU テスト、ファイルロック補助。 |
-| [data/](../data/README.md) | OBS の 4 言語リソースと翻訳規則。 |
+| [data/](../data/README.md) | OBS の 5 言語リソースと翻訳規則。 |
 | [docs/](README.md) | 導入、構成、テスト、検証、公開と引き継ぎ。 |
 | [.github/](../.github/AUTOMATION.md) | CI、公開権限、不具合テンプレート。 |
-| [assets/readme/](../assets/readme/README.md) | 編集可能な 4 言語の図と依存関係不要の生成スクリプト。 |
+| [assets/readme/](../assets/readme/README.md) | 編集可能な 5 言語の図と依存関係不要の生成スクリプト。 |
 | [third-party/](../third-party/README.md) | ランタイム、ツールチェーン、インストーラーの第三者ライセンス。 |
 
 [CHANGELOG.md](../CHANGELOG.md) は変更履歴、[version.json](../version.json) はビルド・公開バージョンを管理します。[.gitattributes](../.gitattributes) は改行、[.gitignore](../.gitignore) は生成物の除外を定義します。貢献、権限、ライセンス、依存関係は上のリンクを参照してください。

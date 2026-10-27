@@ -1,11 +1,12 @@
 # README artwork
 
-The four localized SVG heroes show the plugin's actual division of GPU roles. They are conceptual diagrams, not OBS screenshots or performance comparisons.
+The five localized SVG heroes show the plugin's actual division of GPU roles. They are conceptual diagrams, not OBS screenshots or performance comparisons.
 
 | File | Language |
 | --- | --- |
 | [hero-en.svg](hero-en.svg) | English |
 | [hero-zh-cn.svg](hero-zh-cn.svg) | 简体中文 |
+| [hero-zh-tw.svg](hero-zh-tw.svg) | 繁體中文（台灣） |
 | [hero-ja.svg](hero-ja.svg) | 日本語 |
 | [hero-ko.svg](hero-ko.svg) | 한국어 |
 
@@ -21,7 +22,7 @@ The palette uses charcoal `#12191f`, warm white `#f5f3ee`, coral for rendering a
 
 Original artwork and generator are covered by the project's GPL-2.0-or-later license.
 
-中文：修改生成脚本中的四语文本后重新运行；图片是显卡分工示意，不是实际界面截图或性能对比。
+中文：修改生成脚本中的五语文本后重新运行；图片是显卡分工示意，不是实际界面截图或性能对比。
 
 日本語：生成スクリプト内の翻訳を編集して再実行してください。図は役割の説明であり、実際の UI や性能比較ではありません。
 
@@ -39,6 +40,7 @@ Captured on 2026-10-27 with Windows 11, OBS Studio 33.0.0 and GPU Encoder Bridge
 | --- | --- |
 | English | [screenshots/en/](screenshots/en/) |
 | 简体中文 | [screenshots/zh-cn/](screenshots/zh-cn/) |
+| 繁體中文（台灣） | [screenshots/zh-tw/](screenshots/zh-tw/) |
 | 日本語 | [screenshots/ja/](screenshots/ja/) |
 | 한국어 | [screenshots/ko/](screenshots/ko/) |
 
@@ -53,4 +55,8 @@ All OBS images use the user's existing OBS executable and installed plugin, with
 
 Each installer language was opened in current-user mode, captured before installation and cancelled. No installation or full-disk scan was performed for these pictures.
 
-Keep the screenshots and all four README image paths synchronized. GPU model names, codec names and the product name intentionally retain their original spelling. The SVG generator does not create or modify screenshots. These images demonstrate configuration, not public-platform receiving or performance.
+Keep the screenshots and all five README image paths synchronized. GPU model names, codec names and the product name intentionally retain their original spelling. The SVG generator does not create or modify screenshots. These images demonstrate configuration, not public-platform receiving or performance.
+
+## Taiwan Mandarin additions in 0.3.2
+
+The zh-tw captures use the same user-owned OBS 33.0.0 installation with the new zh-TW module resource and a disposable account-free portable profile. The installer is built by CI from the tagged 0.3.2 source. Its Taiwan discovery capture will be added after downloading that published EXE. Standard OBS controls use OBS's upstream zh-TW resource; project-owned text is authored for Taiwan Mandarin. These OBS captures add to, rather than replace, the existing 16 captures.
